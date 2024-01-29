@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Modenine";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/ModeNine.woff2") format("woff2");
+  }
+  /* ibm-plex-sans-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("/fonts/ibm-plex-sans-v19-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ibm-plex-sans-300italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: italic;
+    font-weight: 300;
+    src: url("/fonts/ibm-plex-sans-v19-latin-300italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ibm-plex-sans-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/ibm-plex-sans-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ibm-plex-sans-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/ibm-plex-sans-v19-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ibm-plex-sans-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("/fonts/ibm-plex-sans-v19-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ibm-plex-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("/fonts/ibm-plex-sans-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  html,
+  body,
+  #__nuxt {
+    font-family: "IBM Plex Sans", sans-serif;
+    @apply flex flex-col flex-1 min-h-screen text-amber-400 bg-slate-950 leading-7 tracking-wide;
+  }
+}
+
+@layer utilities {
+  .balance-text {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  ul li:before {
+    content: ">";
+    margin-right: 0.5rem;
+  }
+
+  .container {
+    @apply mx-auto px-4;
+  }
+  .headline {
+    @apply font-bold text-amber-400 font-headline;
+    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
+  }
+  /* ugly Safari bugfix */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .headline {
+      text-shadow: rgba(251, 191, 36, 0.5) 0px 0px 39px;
+    }
+  }
+  .input {
+    @apply border-amber-400 border-2 px-4 py-2 inline-block bg-transparent transition placeholder:text-amber-400 placeholder:text-opacity-40 caret-amber-400 rounded-none appearance-none;
+  }
+  a {
+    @apply underline underline-offset-4 cursor-pointer;
+  }
+  a:hover,
+  a:focus {
+    animation: flickering 500ms linear forwards;
+    box-shadow: none !important;
+  }
+  .input:focus {
+    animation: flickering 500ms linear forwards;
+    @apply outline-none text-white;
+    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+  }
+  .button {
+    @apply font-bold text-amber-400 font-headline border-amber-400 border-2 px-4 py-2 text-center inline-block cursor-pointer no-underline;
+  }
+
+  .button:hover,
+  .button:focus {
+    animation: flickering 500ms linear forwards;
+    outline: none;
+  }
+
+  .button:hover .blinker,
+  .button:focus .blinker {
+    animation: blink 400ms linear infinite;
+    color: white;
+  }
+
+  .bg-screen {
+    /* background gradiant looks like a old tube screen */
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0),
+      rgba(255, 255, 255, 0.1) 2px,
+      rgba(255, 255, 255, 0.1) 2px,
+      rgba(0, 0, 0, 0) 3px
+    );
+  }
+  .bg-screen-animation {
+    @apply fixed inset-0 overflow-hidden;
+    z-index: 0;
+  }
+  .bg-screen-animation:after {
+    will-change: transform;
+    animation: line 5s linear infinite;
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: -1;
+  }
+
+  .router-link-exact-active {
+    @apply text-white;
+  }
+}
+
+.zapp-out-leave-active,
+.zapp-out-enter-active {
+  position: relative;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.zapp-out:after {
+  background: rgba(255, 255, 255, 0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.zapp-out-leave-to:after {
+  background: rgba(255, 255, 255, 1);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.zapp-out-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.zapp-out-enter-from {
+  opacity: 0;
+}
+
+.zapp-out-enter-to {
+  animation: zapp-in 500ms linear forwards;
+}
+.zapp-out-enter-to > * {
+  animation: zapp-in 500ms linear forwards;
+  animation-delay: 100ms;
+}
+
+.fly-leave-active,
+.fly-enter-active {
+  overflow: hidden;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.fly-enter-from {
+  opacity: 0;
+  transform: perspective(100px) translate3d(0, 0, 100px);
+}
+.fly-leave-to {
+  opacity: 0;
+  transform: perspective(100px) translate3d(0, 0, 100px);
+}
+
+@keyframes flickering {
+  0% {
+    color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    color: white;
+  }
+  20% {
+    color: rgba(0, 0, 0, 0);
+  }
+  30% {
+    color: white;
+    border-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    color: #fbbf24;
+    border-color: white;
+    text-shadow: rgba(251, 191, 36, 0) 0px 0px 39px;
+    box-shadow: rgba(251, 191, 36, 0) 0px 0px 8px;
+  }
+  60% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  70% {
+    border-color: white;
+  }
+  99% {
+    color: #fbbf24;
+    border-color: #fbbf24;
+  }
+  100% {
+    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
+    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+  }
+}
+
+@keyframes line {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  4% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  5% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  6% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  7% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  8% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  9% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  21% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  22% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  23% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  24% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  26% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  46% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  47% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  48% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  49% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  51% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  80% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  81% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  82% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  83% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  84% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  85% {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zapp-in {
+  0% {
+    color: rgba(0, 0, 0, 0);
+  }
+  10% {
+    color: white;
+  }
+  20% {
+    color: rgba(0, 0, 0, 0);
+  }
+  30% {
+    color: white;
+    border-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    color: #fbbf24;
+    border-color: white;
+  }
+  60% {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  70% {
+    border-color: white;
+  }
+  100% {
+    color: #fbbf24;
+    border-color: #fbbf24;
+  }
+}
