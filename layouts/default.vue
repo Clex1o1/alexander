@@ -20,11 +20,11 @@ const router = useRouter();
             <h2 class="font-headline font-bold">Menu</h2>
             <nav>
               <ul class="flex md:grid gap-y-1 gap-x-8 mt-4">
-                <li><NuxtLink to="home">Home</NuxtLink></li>
+                <li><NuxtLink to="/home">Home</NuxtLink></li>
                 <!-- <li><NuxtLink to="blog">Blog</NuxtLink></li> -->
-                <li><NuxtLink to="about">About</NuxtLink></li>
+                <li><NuxtLink to="/about">About</NuxtLink></li>
                 <!-- <li><NuxtLink to="projects">Projects</NuxtLink></li> -->
-                <li><NuxtLink to="experience">Experience</NuxtLink></li>
+                <li><NuxtLink to="/experience">Experience</NuxtLink></li>
               </ul>
             </nav>
           </aside>
@@ -40,8 +40,8 @@ const router = useRouter();
           >
             <nav class="">
               <ul>
-                <li>Imprint</li>
-                <li>Privacy</li>
+                <li><NuxtLink to="/imprint">Imprint</NuxtLink></li>
+                <li><NuxtLink to="/privacy">Privacy</NuxtLink></li>
               </ul>
             </nav>
             <div class="text-right">
