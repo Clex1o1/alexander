@@ -19,6 +19,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.1.2",
     "compare-versions": "^6.1.0",
     "uuid": "^9.0.1"
   }
