@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
-      titleTemplate: "%s - Alexander Classen",
+      titleTemplate: "%s - The Great",
     },
     pageTransition: { name: "zapp-out", mode: "out-in" },
     layoutTransition: { name: "zapp-out", mode: "out-in" },

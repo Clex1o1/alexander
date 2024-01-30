@@ -79,9 +79,13 @@
 }
 
 @layer components {
-  ul li:before {
+  ul li:before,
+  .nav-item::before {
     content: ">";
     margin-right: 0.5rem;
+  }
+  .nav-item {
+    text-decoration: none;
   }
 
   .container {
@@ -129,6 +133,14 @@
     color: white;
   }
 
+  .flicker:hover {
+    animation: flickering 500ms linear forwards;
+    box-shadow: none !important;
+  }
+  .glow {
+    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+  }
+
   .bg-screen {
     /* background gradiant looks like a old tube screen */
     background: repeating-linear-gradient(
@@ -157,7 +169,11 @@
   }
 
   .router-link-exact-active {
-    @apply text-white;
+    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
+  }
+  .router-link-exact-active:before {
+    animation: blink 400ms linear infinite;
+    color: white;
   }
 }
 

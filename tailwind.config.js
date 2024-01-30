@@ -10,4 +10,5 @@ export default {
     },
   },
   plugins: [],
+  safelist: ["router-link-active", "router-link-exact-active"],
 };

@@ -18,14 +18,18 @@ const router = useRouter();
         <section class="intro grid gap-4 md:grid-cols-4 pt-8">
           <aside class="border-2 border-amber-400 p-4">
             <h2 class="font-headline font-bold">Menu</h2>
-            <nav>
-              <ul class="flex md:grid gap-y-1 gap-x-8 mt-4">
-                <li><NuxtLink to="/home">Home</NuxtLink></li>
-                <!-- <li><NuxtLink to="blog">Blog</NuxtLink></li> -->
-                <li><NuxtLink to="/about">About</NuxtLink></li>
-                <!-- <li><NuxtLink to="projects">Projects</NuxtLink></li> -->
-                <li><NuxtLink to="/experience">Experience</NuxtLink></li>
-              </ul>
+            <nav class="flex md:grid gap-y-1 gap-x-8 mt-4">
+              <NuxtLink class="nav-item" to="/home"
+                ><span class="underline">Home</span></NuxtLink
+              >
+              <!-- <li><NuxtLink to="blog">Blog</NuxtLink></li> -->
+              <NuxtLink class="nav-item" to="/about"
+                ><span class="underline">About</span></NuxtLink
+              >
+              <!-- <li><NuxtLink to="projects">Projects</NuxtLink></li> -->
+              <NuxtLink class="nav-item" to="/experience"
+                ><span class="underline">Experience</span></NuxtLink
+              >
             </nav>
           </aside>
           <main class="border-2 border-amber-400 p-4 md:col-span-3">
