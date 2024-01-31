@@ -3,7 +3,7 @@ useHead({
   title: "Alexander",
 });
 definePageMeta({
-  title: "The Great.dev",
+  title: "the-great.dev",
 });
 </script>
 <template>
