@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxthq/studio": "^1.0.10",
     "@nuxtjs/tailwindcss": "^6.11.2",
     "@types/uuid": "^9.0.8",
     "nuxt": "^3.10.0",
