@@ -98,6 +98,11 @@
   /* ugly Safari bugfix */
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .headline {
+      text-shadow: rgba(251, 191, 36, 0.2) 0px 0px 39px;
+    }
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 768px) {
+    .headline {
       text-shadow: rgba(251, 191, 36, 0.1) 0px 0px 39px;
     }
   }
