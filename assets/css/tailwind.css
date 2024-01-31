@@ -402,3 +402,22 @@
     border-color: #fbbf24;
   }
 }
+
+/* Text Formatting */
+.content {
+  h1,
+  h2 {
+    @apply headline font-headline font-bold mt-4;
+    a {
+      @apply no-underline;
+    }
+  }
+  h1:first-child,
+  h2:first-child {
+    @apply mt-0;
+  }
+
+  p {
+    @apply mt-4;
+  }
+}

@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/device"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/content"],
   runtimeConfig: {
     mailjet: {
       apiKey: process.env.MAILJET_API_KEY,
@@ -12,6 +12,7 @@ export default defineNuxtConfig({
       mailjetApi: process.env.MAILJET_API,
     },
   },
+  content: {},
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
