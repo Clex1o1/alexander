@@ -98,7 +98,7 @@
   /* ugly Safari bugfix */
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     .headline {
-      text-shadow: rgba(251, 191, 36, 0.5) 0px 0px 39px;
+      text-shadow: rgba(251, 191, 36, 0.1) 0px 0px 39px;
     }
   }
   .input {
