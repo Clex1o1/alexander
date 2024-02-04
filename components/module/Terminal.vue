@@ -12,7 +12,6 @@ import type { NavItem } from "@nuxt/content/types";
 
 const open = useState("terminal-open", () => false);
 const openCommand = useState("terminal-open-command", () => "");
-const path = ref("/home");
 const lines = ref<Array<string>>([]);
 const inputElement = ref<HTMLElement | null>(null);
 const terminal = ref<HTMLElement | null>(null);
@@ -32,6 +31,13 @@ const contactForm = reactive({
   email: "",
   message: "",
 });
+const path = computed({
+  get: () => route.fullPath,
+  set: (newPath) => {
+    router.push(newPath);
+  },
+});
+
 onClickOutside(terminalElement, () => {
   if (open.value) open.value = false;
 });
@@ -54,8 +60,6 @@ watchEffect(() => {
 });
 
 // #region init
-// set path to current route (path)
-path.value = route.fullPath;
 // fetch navigation items based on path
 const { data: navigation } = await useAsyncData(
   "navigation-terminal",
@@ -159,7 +163,6 @@ function submit() {
         sites.value?.includes("/" + newPath)
       ) {
         path.value = newPath;
-        router.push(path.value);
       } else {
         lines.value.push(`cd: no such file or directory: ${newPath}`);
       }
@@ -169,9 +172,8 @@ function submit() {
       const parentPath = path.value.split("/").slice(0, -1).join("/");
       if (sites.value?.includes(parentPath)) {
         path.value = parentPath;
-        router.push(path.value);
       } else if (!parentPath) {
-        router.push("/");
+        path.value = "/";
       } else {
         lines.value.push(`cd: no such file or directory: ${parentPath}`);
       }
