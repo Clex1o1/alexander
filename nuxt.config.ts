@@ -31,18 +31,6 @@ export default defineNuxtConfig({
     pageTransition: { name: "zapp-out", mode: "out-in" },
     layoutTransition: { name: "zapp-out", mode: "out-in" },
   },
-  nitro: {
-    storage: {
-      keys: {
-        driver: "fs",
-        base: "./.data/keys",
-      },
-      list: {
-        driver: "fs",
-        base: "./.data/list",
-      },
-    },
-  },
   vite: {
     vue: {
       script: {

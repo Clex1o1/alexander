@@ -15,6 +15,9 @@ function formatDate(date: string) {
     day: "numeric",
   });
 }
+
+const openTerminal = useState("terminal-open");
+const openTerminalCommand = useState("terminal-open-command");
 </script>
 
 <template>
@@ -26,6 +29,17 @@ function formatDate(date: string) {
       Your opinions matter! I welcome any feedback you may have. Let me know
       your thoughts; I'm eager to hear from you!
     </p>
+    <!-- <div class="mt-4 p-4">
+      <BaseButton
+        @click="
+          () => {
+            openTerminal = true;
+            openTerminalCommand = 'contact';
+          }
+        "
+        >Send Message</BaseButton
+      >
+    </div> -->
     <!-- in the comments -->
   </div>
 </template>

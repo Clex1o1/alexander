@@ -51,8 +51,11 @@ const { data, refresh } = await useAsyncData(
           </main>
         </section>
       </div>
+      <ClientOnly>
+        <ModuleTerminal></ModuleTerminal>
+      </ClientOnly>
       <slot name="footer">
-        <footer class="mt-auto container p-4 pt-16">
+        <footer class="mt-auto container p-4 pt-16 pb-12">
           <div
             class="border-t-2 border-amber-400 flex justify-between py-2 gap-16"
           >
@@ -90,3 +93,8 @@ const { data, refresh } = await useAsyncData(
     </div>
   </div>
 </template>
+<style scoped>
+.terminal {
+  @apply fixed left-0 right-0 bottom-0 bg-slate-950 z-50;
+}
+</style>
