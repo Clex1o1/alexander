@@ -1,5 +1,6 @@
 export default defineNuxtPlugin({
   async setup(nuxtApp) {},
+
   hooks: {
     "page:finish"() {
       const codeElements = document.querySelectorAll("pre code");

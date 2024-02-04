@@ -21,5 +21,11 @@ function formatDate(date: string) {
   <div class="blog">
     <h4 v-if="data?.date" class="text-xs">{{ formatDate(data?.date) }}</h4>
     <ContentDoc class="content" />
+    <h3 class="headline mt-8">One more thing</h3>
+    <p class="">
+      Your opinions matter! I welcome any feedback you may have. Let me know
+      your thoughts; I'm eager to hear from you!
+    </p>
+    <!-- in the comments -->
   </div>
 </template>

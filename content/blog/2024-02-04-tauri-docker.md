@@ -1,6 +1,6 @@
 ---
 title: Cross-Platform builds with Tauri and Docker
-date: 2024-01-31
+date: 2024-02-04
 ---
 
 Hey everyone, welcome to my first blog post!
