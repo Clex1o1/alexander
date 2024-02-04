@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-useHead({
-  title: "Imprint",
-});
 definePageMeta({
   title: "Imprint",
 });

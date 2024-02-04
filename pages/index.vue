@@ -7,9 +7,6 @@ definePageMeta({
   },
   title: "Alexander",
 });
-useHead({
-  title: "Alexander",
-});
 </script>
 <template>
   <div class="index grid place-content-center container">

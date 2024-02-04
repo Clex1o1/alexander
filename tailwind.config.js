@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         default: ["IBM Plex Sans", "sans-serif"],
         headline: ["Modenine", "sans-serif"],
+        mono: ["IBM Plex Mono", "monospace"],
       },
     },
   },
