@@ -198,8 +198,8 @@ function submit() {
         "Available commands:",
         "cd [path] - change directory",
         "ls - list all sites",
-        "clear - clear terminal",
-        "contact - open interactive contact form"
+        "clear - clear terminal"
+        // "contact - open interactive contact form"
       );
       break;
 
