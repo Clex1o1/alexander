@@ -23,7 +23,9 @@ export default defineNuxtConfig({
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
       titleTemplate: "%s - The Great",
-      meta: [{ name: "lang", content: "en" }],
+      htmlAttrs: {
+        lang: "en",
+      },
     },
 
     pageTransition: { name: "zapp-out", mode: "out-in" },

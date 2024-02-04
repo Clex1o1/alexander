@@ -56,22 +56,24 @@ const { data, refresh } = await useAsyncData(
           <div
             class="border-t-2 border-amber-400 flex justify-between py-2 gap-16"
           >
-            <nav class="">
-              <ul>
+            <nav>
+              <ul class="grid gap-1">
                 <li><NuxtLink to="/imprint">Imprint</NuxtLink></li>
                 <li><NuxtLink to="/privacy">Privacy</NuxtLink></li>
                 <li><NuxtLink to="/contact">Contact</NuxtLink></li>
               </ul>
             </nav>
-            <div class="text-right">
-              <div class="flex gap-2 justify-end text-lg">
-                <NuxtLink to="https://github.com/Clex1o1"
-                  ><Icon name="fa6-brands:github"
+            <div class="text-right grid gap-1">
+              <div class="flex gap-3 justify-end text-lg">
+                <NuxtLink to="https://github.com/Clex1o1" title="GitHub">
+                  <Icon name="fa6-brands:github"
                 /></NuxtLink>
-                <NuxtLink to="https://twitter.com/Clex1o1"
+                <NuxtLink to="https://twitter.com/Clex1o1" title="X/Twitter"
                   ><Icon name="fa6-brands:x-twitter"
                 /></NuxtLink>
-                <NuxtLink to="https://de.linkedin.com/in/clex1o1"
+                <NuxtLink
+                  to="https://de.linkedin.com/in/clex1o1"
+                  title="LinkedIn"
                   ><Icon name="fa6-brands:linkedin"
                 /></NuxtLink>
               </div>
