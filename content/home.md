@@ -1,5 +1,5 @@
 ---
-title: The Great
+title: the-great.dev
 ---
 
 # The Great, huh?

@@ -2,9 +2,6 @@
 definePageMeta({
   title: "Projects",
 });
-useHead({
-  title: "Projects",
-});
 </script>
 
 <template>

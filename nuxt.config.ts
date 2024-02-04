@@ -1,23 +1,31 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/content", "@nuxthq/studio"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/content",
+    "@nuxthq/studio",
+    "nuxt-icon",
+    "@vueuse/nuxt",
+  ],
   runtimeConfig: {
-    mailjet: {
-      apiKey: process.env.MAILJET_API_KEY,
-      apiSecret: process.env.MAILJET_API_SECRET,
-    },
+    // private
     public: {
-      baseUrl: process.env.BASE_URL || "http://localhost:3000",
-      mailjetApi: process.env.MAILJET_API,
+      // public
     },
   },
-  content: {},
+  content: {
+    highlight: {
+      theme: "github-dark",
+    },
+  },
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
       titleTemplate: "%s - The Great",
+      meta: [{ name: "lang", content: "en" }],
     },
+
     pageTransition: { name: "zapp-out", mode: "out-in" },
     layoutTransition: { name: "zapp-out", mode: "out-in" },
   },

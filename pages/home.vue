@@ -1,9 +1,6 @@
 <script lang="ts" setup>
-useHead({
-  title: "Alexander",
-});
 definePageMeta({
-  title: "the-great.dev",
+  title: "Home",
 });
 </script>
 <template>
@@ -14,4 +11,3 @@ definePageMeta({
     </div>
   </div>
 </template>
-<style scoped></style>

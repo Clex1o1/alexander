@@ -63,6 +63,14 @@
     font-weight: 700;
     src: url("/fonts/ibm-plex-sans-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+  /* ibm-plex-mono-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/ibm-plex-mono-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
 
   html,
   body,
@@ -124,6 +132,13 @@
   }
   .button {
     @apply font-bold text-amber-400 font-headline border-amber-400 border-2 px-4 py-2 text-center inline-block cursor-pointer no-underline;
+  }
+
+  .button-secondary {
+    @apply p-0 border-slate-100 border-2 text-slate-100 rounded px-2 py-1 top-4 right-4 absolute opacity-20 text-sm;
+  }
+  .button-secondary:hover {
+    @apply opacity-100;
   }
 
   .button:hover,
@@ -419,5 +434,9 @@
 
   p {
     @apply mt-4;
+  }
+
+  pre {
+    @apply p-4 bg-slate-950 font-mono mt-4 rounded overflow-auto relative;
   }
 }

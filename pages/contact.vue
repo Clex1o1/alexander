@@ -1,14 +1,10 @@
 <script lang="ts" setup>
 definePageMeta({
-  title: "Experience",
-});
-useHead({
-  title: "Experience",
+  title: "Contact",
 });
 </script>
-
 <template>
-  <div class="experiencn">
+  <div class="contact">
     <ContentDoc class="content" />
   </div>
 </template>

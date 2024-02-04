@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-useHead({
-  title: "Privacy",
-});
 definePageMeta({
   title: "Privacy",
 });
