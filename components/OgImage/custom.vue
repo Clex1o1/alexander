@@ -20,7 +20,7 @@ defineProps<{
     <img
       src="/fav.png"
       alt="the-great.dev"
-      class="w-64 absolute bottom-0 right-4"
+      class="w-64 absolute bottom-0 right-4 h-64"
     />
   </div>
 </template>
