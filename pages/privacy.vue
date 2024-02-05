@@ -2,6 +2,7 @@
 definePageMeta({
   title: "Privacy",
 });
+defineOgImageComponent("custom");
 </script>
 <template>
   <article>

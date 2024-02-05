@@ -2,6 +2,7 @@
 definePageMeta({
   title: "Imprint",
 });
+defineOgImageComponent("custom");
 </script>
 <template>
   <article>

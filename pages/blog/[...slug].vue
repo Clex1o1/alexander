@@ -2,6 +2,7 @@
 definePageMeta({
   title: "Blog",
 });
+defineOgImageComponent("custom");
 const route = useRoute();
 const { data, pending, status } = await useAsyncData("home", () =>
   queryContent(route.fullPath).findOne()

@@ -2,6 +2,7 @@
 definePageMeta({
   title: "About",
 });
+defineOgImageComponent("custom");
 </script>
 
 <template>

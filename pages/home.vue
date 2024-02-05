@@ -2,6 +2,7 @@
 definePageMeta({
   title: "Home",
 });
+defineOgImageComponent("custom");
 </script>
 <template>
   <div class="home">

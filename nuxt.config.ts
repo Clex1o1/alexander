@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "nuxt-icon",
     "@vueuse/nuxt",
+    "nuxt-og-image",
   ],
   runtimeConfig: {
     // private
@@ -38,5 +39,25 @@ export default defineNuxtConfig({
         propsDestructure: true,
       },
     },
+  },
+  site: {
+    // production URL
+    url: "https://www.the-great.dev",
+  },
+  ogImage: {
+    fonts: [
+      {
+        name: "IBM Plex Sans",
+        weight: 400,
+        // path must point to a public font file
+        path: "/fonts/IBMPlexSans-Medium.ttf",
+      },
+      {
+        name: "Modenine",
+        weight: 400,
+        // path must point to a public font file
+        path: "/fonts/ModeNine.ttf",
+      },
+    ],
   },
 });

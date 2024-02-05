@@ -5,6 +5,7 @@ definePageMeta({
 useHead({
   title: "Blog",
 });
+defineOgImageComponent("custom");
 const { data: navigation } = await useAsyncData("navigation", () =>
   fetchContentNavigation(queryContent("blog"))
 );

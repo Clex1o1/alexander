@@ -17,6 +17,7 @@ useHead({
     },
   ],
 });
+defineOgImageComponent("custom");
 </script>
 <template>
   <div class="index grid place-content-center container">

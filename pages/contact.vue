@@ -2,6 +2,7 @@
 definePageMeta({
   title: "Contact",
 });
+defineOgImageComponent("custom");
 </script>
 <template>
   <div class="contact">
