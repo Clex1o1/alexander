@@ -52,7 +52,7 @@ const { data, refresh } = await useAsyncData(
         </section>
       </div>
       <ClientOnly>
-        <ModuleTerminal></ModuleTerminal>
+        <ModuleTerminal class="fixed bottom-0 inset-x-0"></ModuleTerminal>
       </ClientOnly>
       <slot name="footer">
         <footer class="mt-auto container p-4 pt-16 pb-12">
