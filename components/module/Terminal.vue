@@ -189,8 +189,8 @@ function submit() {
   lines.value.push(input.value);
   switch (true) {
     // cd to path based on regex
-    case /^cd\s+\/?[\w-]+/.test(input.value):
-      const newPath = input.value.split(" ")[1];
+    case /^cd\s+\/?[\w-]+/.test(input.value.toLocaleLowerCase()):
+      const newPath = input.value.toLocaleLowerCase().split(" ")[1];
       if (
         sites.value?.includes(newPath) ||
         sites.value?.includes("/" + newPath)
@@ -201,7 +201,7 @@ function submit() {
       }
       break;
     // cd to upper directory
-    case /^cd\s+\.\./.test(input.value):
+    case /^cd\s+\.\./.test(input.value.toLocaleLowerCase()):
       const parentPath = path.value.split("/").slice(0, -1).join("/");
       if (sites.value?.includes(parentPath)) {
         path.value = parentPath;
@@ -212,11 +212,11 @@ function submit() {
       }
       break;
     // list all sites
-    case /^ls/.test(input.value):
+    case /^ls/.test(input.value.toLocaleLowerCase()):
       lines.value.push(sites.value?.join(" ") || "");
       break;
     // clear terminal
-    case /^clear/.test(input.value):
+    case /^clear/.test(input.value.toLocaleLowerCase()):
       lines.value = [];
       break;
 
@@ -232,7 +232,7 @@ function submit() {
       //   startConsent();
       break;
     // case help
-    case /^help/.test(input.value):
+    case /^help/.test(input.value.toLocaleLowerCase()):
       lines.value.push(
         "Available commands:",
         "cd [path] - change directory",
@@ -244,7 +244,9 @@ function submit() {
       break;
 
     default:
-      lines.value.push(`command not found: ${input.value}. Try 'help'`);
+      lines.value.push(
+        `command not found: ${input.value.toLocaleLowerCase()}. Try 'help'`
+      );
   }
 
   // clear input after successful command
