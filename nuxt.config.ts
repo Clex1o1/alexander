@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@vueuse/nuxt",
     "nuxt-og-image",
+    "nuxt-gtag",
   ],
   runtimeConfig: {
     // private
@@ -59,5 +60,8 @@ export default defineNuxtConfig({
         path: "/fonts/ModeNine.ttf",
       },
     ],
+  },
+  gtag: {
+    initialConsent: false,
   },
 });

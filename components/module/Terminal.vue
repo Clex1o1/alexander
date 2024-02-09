@@ -21,6 +21,9 @@ const router = useRouter();
 const route = useRoute();
 const { cmd, ctrl, k, c } = useMagicKeys();
 const availableCommands = ["help", "cd", "ls", "clear"];
+const { gtag, grantConsent, revokeConsent } = useGtag();
+const cookies = useCookie("_ga");
+const showConsent = ref(false);
 // const availableCommands = ["help", "cd", "ls", "contact", "clear"];
 const currentStep = ref("");
 const contactForm = reactive({
@@ -106,6 +109,36 @@ watch(open, (isOpen) => {
 });
 // #endregion
 
+// #region cookie consent
+async function startConsent() {
+  showConsent.value = true;
+  open.value = true;
+  inputElement.value?.focus();
+  await until(cookies).toBe(true);
+  showConsent.value = false;
+}
+
+function submitCookie(value?: "n" | "y") {
+  const localInput = value || input.value.toLocaleLowerCase();
+  if (localInput === "y" || localInput === "yes") {
+    grantConsent();
+    showConsent.value = false;
+    open.value = false;
+  } else if (localInput === "n" || localInput === "no") {
+    revokeConsent();
+    showConsent.value = false;
+    open.value = false;
+  }
+}
+// # endregion
+
+// #region first visit
+
+if (!cookies.value) {
+  startConsent();
+}
+// #endregion
+
 // if new line added, scroll to bottom of terminal and remove first line if more than 1000 lines for performance reasons
 watch(lines.value, async () => {
   if (terminal.value) {
@@ -187,13 +220,17 @@ function submit() {
       lines.value = [];
       break;
 
-    // case contact
-    // case /^contact/.test(input.value):
-    //   lines.value.push("Starting contact form...");
-    //   lines.value.push("Enter Firstname");
-    //   currentStep.value = "Firstname:";
-    //   contactForm.contactstep = 1;
-    //   break;
+      // case contact
+      // case /^contact/.test(input.value):
+      //   lines.value.push("Starting contact form...");
+      //   lines.value.push("Enter Firstname");
+      //   currentStep.value = "Firstname:";
+      //   contactForm.contactstep = 1;
+      //   break;
+      // case cookies
+      // case /^cookies/.test(input.value):
+      //   startConsent();
+      break;
     // case help
     case /^help/.test(input.value):
       lines.value.push(
@@ -201,6 +238,7 @@ function submit() {
         "cd [path] - change directory",
         "ls - list all sites",
         "clear - clear terminal"
+        // "cookies - manage cookies"
         // "contact - open interactive contact form"
       );
       break;
@@ -257,25 +295,46 @@ function autocomplete(event: KeyboardEvent) {
       @click="inputElement?.focus()"
       ref="terminal"
     >
-      <div class="lines">
-        <div v-for="line in lines" class="line">> {{ line }}</div>
-      </div>
-      <div class="flex gap-1 flex-nowrap">
-        <span v-if="contactForm.contactstep > 0" class="min-w-fit"
-          >>
-          {{ currentStep }}
-          $
-        </span>
-        <span v-else class="min-w-fit">> {{ path }} $ </span>
-        <input
-          class="bg-slate-950 appearance-none outline-none w-full"
-          type="text"
-          @keyup.enter="submit"
-          @keydown.tab.prevent="autocomplete"
-          v-model="input"
-          ref="inputElement"
-        />
-      </div>
+      <template v-if="!showConsent">
+        <div class="lines">
+          <div v-for="line in lines" class="line">> {{ line }}</div>
+        </div>
+        <div class="flex gap-1 flex-nowrap">
+          <span v-if="contactForm.contactstep > 0" class="min-w-fit"
+            >>
+            {{ currentStep }}
+            $
+          </span>
+          <span v-else class="min-w-fit">> {{ path }} $ </span>
+          <input
+            class="bg-slate-950 appearance-none outline-none w-full"
+            type="text"
+            @keyup.enter="submit"
+            @keydown.tab.prevent="autocomplete"
+            v-model="input"
+            ref="inputElement"
+          />
+        </div>
+      </template>
+      <template v-else>
+        <div class="consent">
+          <div class="grid justify-between gap-1">
+            <p class="min-w-min">Warning: Cookies detected! Accept (Y/n)?</p>
+            <div class="flex gap-2 justify-around">
+              <button @click="submitCookie('y')">(y) Yes</button>
+              <button @click="submitCookie('n')">(n) No</button>
+            </div>
+          </div>
+          <input
+            class="bg-slate-950 appearance-none outline-none w-full"
+            type="text"
+            @keyup.enter="submitCookie(undefined)"
+            v-model="input"
+            ref="inputElement"
+            autofocus
+          />
+        </div>
+      </template>
     </div>
   </div>
 </template>

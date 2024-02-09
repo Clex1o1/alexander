@@ -5,6 +5,9 @@
       <slot name="header"></slot>
       <slot />
       <slot name="footer"> </slot>
+      <ClientOnly>
+        <ModuleTerminal class="fixed bottom-0 inset-x-0"></ModuleTerminal>
+      </ClientOnly>
     </div>
   </div>
 </template>
