@@ -284,6 +284,10 @@ function autocomplete(event: KeyboardEvent) {
         () => {
           open = !open;
           inputElement?.focus();
+          gtag('event', 'terminal', {
+            event_category: 'interaction',
+            event_label: open ? 'open' : 'close',
+          });
         }
       "
     >
