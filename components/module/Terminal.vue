@@ -319,6 +319,10 @@ function autocomplete(event: KeyboardEvent) {
             @keydown.tab.prevent="autocomplete"
             v-model="input"
             ref="inputElement"
+            autocapitalize="off"
+            spellcheck="false"
+            autocorrect="off"
+            autocomplete="off"
           />
         </div>
       </template>
@@ -338,6 +342,9 @@ function autocomplete(event: KeyboardEvent) {
             v-model="input"
             ref="inputElement"
             autofocus
+            autocapitalize="off"
+            spellcheck="false"
+            autocorrect="off"
           />
         </div>
       </template>
