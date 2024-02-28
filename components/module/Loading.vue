@@ -1,6 +1,13 @@
 <script lang="ts" setup>
-const { progress, isLoading, start, finish, clear } = useLoadingIndicator();
+const { progress, isLoading } = useLoadingIndicator();
 // before unmounte make all white effect
+
+const computedProgress = computed(() => {
+  if (isLoading.value) {
+    return Math.ceil(progress.value);
+  }
+  return 100;
+});
 </script>
 <template>
   <div v-if="isLoading">
@@ -9,10 +16,10 @@ const { progress, isLoading, start, finish, clear } = useLoadingIndicator();
     >
       <div
         class="loader bg-amber-400 h-full w-full transition-transform duration-300 ease-in-out"
-        :style="`transform: translateX(-${Math.ceil(progress)}%)`"
+        :style="`transform: translateX(-${computedProgress}%)`"
       ></div>
     </div>
-    <p class="text-center">{{ Math.ceil(progress) }}%</p>
+    <p class="text-center">{{ computedProgress }}%</p>
   </div>
 </template>
 <style scoped></style>
