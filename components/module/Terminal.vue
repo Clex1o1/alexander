@@ -297,7 +297,7 @@ function autocomplete(event: KeyboardEvent) {
       <Icon v-else name="fa6-solid:angles-down" />
     </button>
     <div
-      class="bg-slate-950 max-h-96 overflow-scroll p-4"
+      class="bg-slate-950 max-h-96 overflow-auto p-4"
       @click="inputElement?.focus()"
       ref="terminal"
     >
