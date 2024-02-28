@@ -9,10 +9,10 @@ const { progress, isLoading, start, finish, clear } = useLoadingIndicator();
     >
       <div
         class="loader bg-amber-400 h-full w-full transition-transform duration-300 ease-in-out"
-        :style="`transform: translateX(-${progress * -1}%)`"
+        :style="`transform: translateX(-${Math.ceil(progress)}%)`"
       ></div>
     </div>
-    <p class="text-center">{{ progress }}%</p>
+    <p class="text-center">{{ Math.ceil(progress) }}%</p>
   </div>
 </template>
 <style scoped></style>
