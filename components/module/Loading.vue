@@ -16,7 +16,7 @@ const computedProgress = computed(() => {
     >
       <div
         class="loader bg-amber-400 h-full w-full transition-transform duration-300 ease-in-out"
-        :style="`transform: translateX(-${computedProgress}%)`"
+        :style="`transform: translateX(-${100 - computedProgress}%)`"
       ></div>
     </div>
     <p class="text-center">{{ computedProgress }}%</p>
