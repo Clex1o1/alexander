@@ -1,4 +1,7 @@
-# Scripting with ZX
+---
+title: Scripting with ZX
+date: 2024-03-01T00:00:00.000Z
+---
 
 In my last post, I mentioned that I use [ZX](https://google.github.io) from Google to optimize my build steps. [ZX](https://google.github.io/zx/) is a package that allows you to write Bash or zsh-like scripts using JavaScript or TypeScript syntax.
 

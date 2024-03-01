@@ -1,11 +1,11 @@
 ---
 title: Cross-Platform builds with Tauri and Docker
-date: 2024-02-04
+date: 2024-02-04T00:00:00.000Z
 ---
 
 Hey everyone, welcome to my first blog post!
 
-I am currently developing an app using the cross-platform framework Tauri. Tauri is a versatile framework that enables you to create native running apps with any JS or HTML frontend. The backend of Tauri is implemented in Rust, and it utilizes the Webkit engine for macOS and Linux, as well as WebView2 for Windows to display your frontend. You can find more information about Tauri on the official website: https://tauri.app/.
+I am currently developing an app using the cross-platform framework Tauri. Tauri is a versatile framework that enables you to create native running apps with any JS or HTML frontend. The backend of Tauri is implemented in Rust, and it utilizes the Webkit engine for macOS and Linux, as well as WebView2 for Windows to display your frontend. You can find more information about Tauri on the official website: <https://tauri.app/>.
 
 But why am I writing this?
 
