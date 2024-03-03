@@ -92,6 +92,11 @@
     content: ">";
     margin-right: 0.5rem;
   }
+
+  ol {
+    list-style-type: decimal;
+  }
+
   .nav-item {
     text-decoration: none;
   }
