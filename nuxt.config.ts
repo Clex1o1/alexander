@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-og-image",
     "nuxt-gtag",
+    "@nuxt/image",
   ],
   runtimeConfig: {
     // private
