@@ -444,4 +444,8 @@
   pre {
     @apply p-4 bg-slate-950 font-mono mt-4 rounded overflow-auto relative;
   }
+
+  img {
+    @apply mx-auto mt-8;
+  }
 }
