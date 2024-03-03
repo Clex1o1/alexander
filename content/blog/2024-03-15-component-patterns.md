@@ -25,7 +25,8 @@ However, we've expanded upon this pattern. Because the atomic design pattern is 
 
 Our components aren't named after chemical parts. We found it confusing to introduce another language into our already complex domains. Our smallest units are **base components**, which are essentially the same as atoms. Additionally, we have **module components** and **section components**. Just like in atomic design, our **modules** are built with **base** components, and **sections** are built with **base** and **module** components. The naming is inspired by the semantic HTML websites have, representing the way users recognize the parts of software.
 
-![website-example](/images/website-example.png)
+::BaseImage{imgSrc="/images/website-example.png"}
+::
 
 _Genererated by_ [v0](https://v0.dev/)
 
@@ -264,4 +265,4 @@ module.exports = {
 }
 ```
 
-You can adjust all the settings you see here; these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://chat.openai.com/c/https) and always a custom `` to create our own design system, which perfectly fits into our workflow.
+You can adjust all the settings you see here; these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://chat.openai.com/c/https) and always a custom \`\` to create our own design system, which perfectly fits into our workflow.
