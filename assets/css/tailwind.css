@@ -94,7 +94,7 @@
   }
 
   ol {
-    list-style-type: decimal;
+    @apply list-decimal pl-4;
   }
 
   .nav-item {
