@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "nuxt-gtag",
     "@nuxt/image",
+    "nuxt-feedme",
   ],
   runtimeConfig: {
     // private
