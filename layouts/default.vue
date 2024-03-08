@@ -69,15 +69,15 @@ const { data, refresh } = await useAsyncData(
             <div class="text-right grid gap-1">
               <div class="flex gap-3 justify-end text-lg">
                 <NuxtLink to="https://github.com/Clex1o1" title="GitHub">
-                  <Icon name="fa6-brands:github"
+                  <NuxtIcon name="github"
                 /></NuxtLink>
                 <NuxtLink to="https://twitter.com/Clex1o1" title="X/Twitter"
-                  ><Icon name="fa6-brands:x-twitter"
+                  ><NuxtIcon name="x-twitter"
                 /></NuxtLink>
                 <NuxtLink
                   to="https://de.linkedin.com/in/clex1o1"
                   title="LinkedIn"
-                  ><Icon name="fa6-brands:linkedin"
+                  ><NuxtIcon name="linkedin"
                 /></NuxtLink>
               </div>
               <p class="font-headline font-bold balance-text">
