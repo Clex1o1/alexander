@@ -54,14 +54,8 @@ export default defineNuxtConfig({
           ],
         },
         mapping: [
-          // Description is used in Feed, so you point Feed object field to yours post field
-          ["description", "excerpt"],
-          // Content is used in Feed, so you point Feed object field to yours post field
-          ["content", "body"],
-          // Same
           ["link", "_path"],
-          // Taking published from date, wrapping value by Date object as described in Readme
-          ["published", "date", (value) => (value ? new Date(value) : value)],
+          ["image", "https://www.the-great.dev/__og-image__/image/og.png"],
         ],
       },
     },
