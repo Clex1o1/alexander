@@ -15,6 +15,7 @@
     "@nuxtjs/tailwindcss": "^6.11.2",
     "@types/uuid": "^9.0.8",
     "nuxt": "^3.10.0",
+    "nuxt-feedme": "^1.0.0",
     "nuxt-gtag": "^1.2.0",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
