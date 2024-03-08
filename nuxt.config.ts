@@ -40,6 +40,26 @@ export default defineNuxtConfig({
             "Hi! I'm Alexander Classen, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
         },
       },
+      item: {
+        defaults: {
+          author: [
+            {
+              email: "alexander@the-great.dev",
+              name: "Alexander Classen",
+            },
+          ],
+        },
+        mapping: [
+          // Description is used in Feed, so you point Feed object field to yours post field
+          ["description", "excerpt"],
+          // Content is used in Feed, so you point Feed object field to yours post field
+          ["content", "body"],
+          // Same
+          ["link", "_path"],
+          // Taking published from date, wrapping value by Date object as described in Readme
+          ["published", "date", (value) => (value ? new Date(value) : value)],
+        ],
+      },
     },
   },
   app: {
