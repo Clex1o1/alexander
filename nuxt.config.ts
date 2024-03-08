@@ -18,6 +18,7 @@ export default defineNuxtConfig({
       // public
     },
   },
+
   content: {
     highlight: {
       theme: "github-dark",
@@ -27,6 +28,24 @@ export default defineNuxtConfig({
     global: true,
     dirs: ["~/components"],
   },
+  feedme: {
+    content: {
+      feed: {
+        defaults: {
+          author: {
+            email: "alexander@the-great.dev",
+            name: "Alexander Classen",
+          },
+          title: "the-graet.dev",
+          link: "https://www.the-great.dev",
+          favicon: "https://www.the-great.dev/favicon.ico",
+          image: "https://www.the-great.dev/__og-image__/image/og.png",
+          description:
+            "Hi! I'm Alexander Classen, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
+        },
+      },
+    },
+  },
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
@@ -34,6 +53,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "en",
       },
+      title: "the-great.dev",
     },
 
     pageTransition: { name: "zapp-out", mode: "out-in" },
