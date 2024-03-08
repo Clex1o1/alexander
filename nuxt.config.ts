@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/image",
     "nuxt-feedme",
+    "nuxt-icons"
   ],
   runtimeConfig: {
     // private
@@ -45,6 +46,7 @@ export default defineNuxtConfig({
         },
       },
       item: {
+        templateRoots: ["content", "blog"],
         defaults: {
           author: [
             {

@@ -281,7 +281,7 @@ function autocomplete(event: KeyboardEvent) {
     ref="terminalElement"
   >
     <button
-      class="absolute rounded-t -translate-y-full right-4 bg-slate-950 px-4 py-2"
+      class="absolute rounded-t -translate-y-full right-4 bg-slate-950 px-4 py-4"
       @click="
         () => {
           open = !open;
@@ -293,8 +293,8 @@ function autocomplete(event: KeyboardEvent) {
         }
       "
     >
-      <Icon v-if="!open" name="mdi:code-greater-than-or-equal" />
-      <Icon v-else name="fa6-solid:angles-down" />
+      <NuxtIcon v-if="!open" name="code-greater-than-or-equal" />
+      <NuxtIcon v-else name="angles-down" />
     </button>
     <div
       class="bg-slate-950 max-h-96 overflow-auto p-4"
