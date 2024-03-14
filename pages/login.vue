@@ -4,10 +4,10 @@ definePageMeta({
   layout: "auth",
 });
 defineOgImageComponent("custom");
+const user = useSupabaseUser();
 </script>
 <template>
   <div class="login">
-    <NuxtIcon />
     <ModuleLogin />
   </div>
 </template>

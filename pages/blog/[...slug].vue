@@ -30,7 +30,7 @@ const openTerminalCommand = useState("terminal-open-command");
       Your opinions matter! I welcome any feedback you may have. Let me know
       your thoughts; I'm eager to hear from you!
     </p>
-    <!-- <div class="mt-4 p-4">
+    <div class="mt-4 p-4">
       <BaseButton
         @click="
           () => {
@@ -40,7 +40,7 @@ const openTerminalCommand = useState("terminal-open-command");
         "
         >Send Message</BaseButton
       >
-    </div> -->
+    </div>
     <!-- in the comments -->
   </div>
 </template>

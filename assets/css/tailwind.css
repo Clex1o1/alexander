@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --color-values-primary: 251, 191, 36;
-  --color-primary: rgb(var(--color-values-primary));
-  --text-shadow: rgba(var(--color-values-primary), 0.9) 0px 0px 39px;
-  --box-shadow: rgba(var(--color-values-primary), 0.9) 0px 0px 8px;
+  --color-value-primary: 251, 191, 36;
+  --color-primary: rgb(var(--color-value-primary));
+  --text-shadow: rgba(var(--color-value-primary), 0.9) 0px 0px 39px;
+  --box-shadow: rgba(var(--color-value-primary), 0.9) 0px 0px 8px;
 }
 
 @layer base {
@@ -109,7 +109,7 @@
   }
   .headline {
     @apply font-bold text-amber-400 font-headline;
-    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
+    text-shadow: var(--text-shadow);
   }
   /* ugly Safari bugfix */
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -136,7 +136,7 @@
   .input:focus {
     animation: flickering 500ms linear forwards;
     @apply outline-none text-white;
-    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+    box-shadow: var(--box-shadow);
   }
   .button {
     @apply font-bold text-amber-400 font-headline border-amber-400 border-2 px-4 py-2 text-center inline-block cursor-pointer no-underline;
@@ -166,7 +166,7 @@
     box-shadow: none !important;
   }
   .glow {
-    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+    box-shadow: var(--box-shadow);
   }
 
   .bg-screen {
@@ -197,7 +197,7 @@
   }
 
   .router-link-exact-active {
-    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
+    text-shadow: var(--text-shadow);
   }
   .router-link-exact-active:before {
     animation: blink 400ms linear infinite;
@@ -208,12 +208,19 @@
 /* Error State */
 
 .error {
+  --color-value-primary: 255, 0, 0;
+  --color-primary: rgb(var(--color-value-primary));
+  --text-shadow: rgba(var(--color-value-primary), 0.9) 0px 0px 39px;
+  --box-shadow: rgba(var(--color-value-primary), 0.9) 0px 0px 8px;
   @apply text-white bg-red-950 transition-colors duration-300 ease-in-out;
   .text-amber-400 {
     @apply text-red-600 transition-colors duration-300 ease-in-out;
   }
   .border-amber-400 {
     @apply border-red-600 transition-colors duration-300 ease-in-out;
+  }
+  .input::placeholder {
+    @apply text-red-600 transition-colors duration-300 ease-in-out;
   }
 }
 .error::before {
@@ -226,7 +233,7 @@
 .error::after {
   content: "";
   z-index: 1;
-  @apply absolute inset-0 block backdrop-blur-sm;
+  @apply absolute inset-0 block backdrop-blur-sm bg-screen;
 }
 
 /* Zapp Animation e.g. Page Transtion */
@@ -303,7 +310,7 @@
     border-color: rgba(0, 0, 0, 0);
   }
   50% {
-    color: #fbbf24;
+    color: var(--color-primary);
     border-color: white;
     text-shadow: rgba(251, 191, 36, 0) 0px 0px 39px;
     box-shadow: rgba(251, 191, 36, 0) 0px 0px 8px;
@@ -315,12 +322,12 @@
     border-color: white;
   }
   99% {
-    color: #fbbf24;
-    border-color: #fbbf24;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
   }
   100% {
-    text-shadow: rgba(251, 191, 36, 0.9) 0px 0px 39px;
-    box-shadow: rgba(251, 191, 36, 0.9) 0px 0px 8px;
+    text-shadow: var(--text-shadow);
+    box-shadow: var(--box-shadow);
   }
 }
 
@@ -438,7 +445,7 @@
     border-color: rgba(0, 0, 0, 0);
   }
   50% {
-    color: #fbbf24;
+    color: var(--color-primary);
     border-color: white;
   }
   60% {
@@ -448,8 +455,8 @@
     border-color: white;
   }
   100% {
-    color: #fbbf24;
-    border-color: #fbbf24;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
   }
 }
 
