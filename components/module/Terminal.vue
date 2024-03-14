@@ -22,7 +22,7 @@ const route = useRoute();
 const { cmd, ctrl, k, c } = useMagicKeys();
 const availableCommands = ["help", "cd", "ls", "clear"];
 const { gtag, grantConsent, revokeConsent } = useGtag();
-const cookies = useCookie("_ga");
+const cookies = useCookie("_ga", { maxAge: 60 * 60 * 24 * 30 });
 const showConsent = ref(false);
 // const availableCommands = ["help", "cd", "ls", "contact", "clear"];
 const currentStep = ref("");
@@ -125,6 +125,7 @@ function submitCookie(value?: "n" | "y") {
     showConsent.value = false;
     open.value = false;
   } else if (localInput === "n" || localInput === "no") {
+    cookies.value = "rejected";
     revokeConsent();
     showConsent.value = false;
     open.value = false;

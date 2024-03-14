@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/image",
     "nuxt-feedme",
-    "nuxt-icons"
+    "nuxt-icons",
+    "@nuxtjs/supabase",
   ],
   runtimeConfig: {
     // private
@@ -101,5 +102,8 @@ export default defineNuxtConfig({
   },
   gtag: {
     initialConsent: false,
+  },
+  supabase: {
+    redirect: false,
   },
 });

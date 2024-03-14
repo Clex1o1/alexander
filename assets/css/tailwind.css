@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-values-primary: 251, 191, 36;
+  --color-primary: rgb(var(--color-values-primary));
+  --text-shadow: rgba(var(--color-values-primary), 0.9) 0px 0px 39px;
+  --box-shadow: rgba(var(--color-values-primary), 0.9) 0px 0px 8px;
+}
+
 @layer base {
   @font-face {
     font-family: "Modenine";
@@ -86,6 +93,7 @@
   }
 }
 
+/* Basic stylings */
 @layer components {
   ul li:before,
   .nav-item::before {
@@ -197,6 +205,31 @@
   }
 }
 
+/* Error State */
+
+.error {
+  @apply text-white bg-red-950 transition-colors duration-300 ease-in-out;
+  .text-amber-400 {
+    @apply text-red-600 transition-colors duration-300 ease-in-out;
+  }
+  .border-amber-400 {
+    @apply border-red-600 transition-colors duration-300 ease-in-out;
+  }
+}
+.error::before {
+  content: "";
+  mask: url(/icons/warn.svg) no-repeat center center;
+  mask-size: contain;
+  z-index: 1;
+  @apply absolute inset-0  block bg-red-900 opacity-50;
+}
+.error::after {
+  content: "";
+  z-index: 1;
+  @apply absolute inset-0 block backdrop-blur-sm;
+}
+
+/* Zapp Animation e.g. Page Transtion */
 .zapp-out-leave-active,
 .zapp-out-enter-active {
   position: relative;
@@ -239,6 +272,7 @@
   animation-delay: 100ms;
 }
 
+/* Intro animation */
 .fly-leave-active,
 .fly-enter-active {
   overflow: hidden;
@@ -253,6 +287,7 @@
   transform: perspective(100px) translate3d(0, 0, 100px);
 }
 
+/* general animations */
 @keyframes flickering {
   0% {
     color: rgba(0, 0, 0, 0);
@@ -439,4 +474,15 @@
   pre {
     @apply p-4 bg-slate-950 font-mono mt-4 rounded overflow-auto relative;
   }
+}
+
+/* Custom Component Sytles */
+.is-typed span.underscore {
+  display: inline-flex;
+  width: 10px;
+  height: 2px;
+  align-items: flex-end;
+  background-color: white;
+  transform: translateY(-0.3rem);
+  animation: blink 400ms infinite;
 }
