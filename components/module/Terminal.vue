@@ -104,6 +104,13 @@ watch(open, (isOpen) => {
         inputElement.value?.focus();
       }
     }
+    if (!isOpen) {
+      if (contactForm.contactstep > 0) {
+        lines.value.push("Contact form canceled");
+        contactForm.contactstep = 0;
+        currentStep.value = "";
+      }
+    }
   });
 });
 // #endregion
