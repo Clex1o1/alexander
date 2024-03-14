@@ -5,7 +5,7 @@ defineProps<{
 }>();
 </script>
 <template>
-  <NuxtLink class="button" :to="to"
+  <NuxtLink v-if="to" class="button" :to="to"
     ><slot></slot
     ><template v-if="loading">
       <ClientOnly
@@ -15,6 +15,16 @@ defineProps<{
     </template>
     <span v-else class="blinker">_</span></NuxtLink
   >
+  <button v-else class="button">
+    <slot></slot
+    ><template v-if="loading">
+      <ClientOnly
+        ><span class="loading">.</span><span class="loading">.</span
+        ><span class="loading">.</span>
+      </ClientOnly>
+    </template>
+    <span v-else class="blinker">_</span>
+  </button>
 </template>
 <style scoped>
 .zapp-out-enter-to .button {
