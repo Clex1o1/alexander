@@ -48,6 +48,7 @@ export default defineNuxtConfig({
       },
       item: {
         templateRoots: ["content", "blog"],
+
         defaults: {
           author: [
             {
@@ -58,6 +59,7 @@ export default defineNuxtConfig({
         },
         mapping: [
           ["link", "_path"],
+          ["date", "date"],
           ["image", "https://www.the-great.dev/__og-image__/image/og.png"],
         ],
       },
