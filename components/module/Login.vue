@@ -13,20 +13,50 @@ const error = ref("");
 const errorHappened = useState("errorHappened", () => false);
 
 if (user.value) {
-  console.log("user", user);
   if (referrer) router.push(referrer);
   else router.push("/home");
 }
 
 async function login(event: SubmitEvent) {
   loading.value = true;
+  if (event.submitter.value === "signIn") {
+    await signIn();
+  } else {
+    await supabase.auth
+      .signUp({
+        email: email.value,
+        password: password.value,
+      })
+      .then((res) => {
+        if (res.error) {
+          errorHappened.value = true;
+          error.value = res.error.message;
+          return;
+        }
+        error.value = "";
+        errorHappened.value = false;
+        loading.value = false;
+        if (!res.data.session) {
+          if (res.data.user?.user_metadata.email_verified === false) {
+            error.value = "Please verify your email address";
+            return;
+          }
+          signIn();
+        }
+      })
+      .finally(() => {
+        loading.value = false;
+      });
+  }
+}
+
+async function signIn() {
   await supabase.auth
     .signInWithPassword({
       email: email.value,
       password: password.value,
     })
     .then((res) => {
-      console.log(res);
       if (res.error) {
         errorHappened.value = true;
         error.value = res.error.message;
@@ -34,6 +64,7 @@ async function login(event: SubmitEvent) {
       }
       errorHappened.value = false;
       loginDone.value = true;
+      loading.value = false;
     })
     .finally(() => {
       loading.value = false;
@@ -49,7 +80,7 @@ watch(
           if (referrer) router.push(referrer);
           else router.push("/home");
         }
-      }, 500);
+      }, 1000);
     }
   }
 );
@@ -99,9 +130,12 @@ onBeforeRouteLeave(() => {
             placeholder="Password"
           />
         </div>
-        <div class="grid gap-4 mt-4">
+        <div class="grid gap-4 mt-4 grid-cols-2">
           <BaseButton type="submit" value="signUp" :loading="loading"
-            >Login</BaseButton
+            >Sign Up!</BaseButton
+          >
+          <BaseButton type="submit" value="signIn" :loading="loading"
+            >Sign In!</BaseButton
           >
         </div>
       </form>

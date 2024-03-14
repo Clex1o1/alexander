@@ -29,6 +29,7 @@
     "@vercel/analytics": "^1.1.2",
     "@vueuse/nuxt": "^10.7.2",
     "nuxt-icons": "^3.2.1",
+    "resend": "^3.2.0",
     "vue-writer": "^1.2.0"
   }
 }

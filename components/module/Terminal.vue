@@ -20,11 +20,10 @@ const input = ref("");
 const router = useRouter();
 const route = useRoute();
 const { cmd, ctrl, k, c } = useMagicKeys();
-const availableCommands = ["help", "cd", "ls", "clear"];
+const availableCommands = ["help", "cd", "ls", "clear", "contact"];
 const { gtag, grantConsent, revokeConsent } = useGtag();
 const cookies = useCookie("_ga", { maxAge: 60 * 60 * 24 * 30 });
 const showConsent = ref(false);
-// const availableCommands = ["help", "cd", "ls", "contact", "clear"];
 const currentStep = ref("");
 const contactForm = reactive({
   contactstep: 0,
@@ -176,9 +175,24 @@ function submit() {
       case 4:
         contactForm.message = input.value;
         currentStep.value = "";
-        lines.value.push("Contact form submitted!");
-        contactForm.contactstep = 0;
-        input.value = "";
+        $fetch("/api/send", {
+          method: "POST",
+          body: JSON.stringify(contactForm),
+        })
+          .then((res) => {
+            if (res.error) {
+              lines.value.push("Error sending message");
+              console.error(res.error);
+            } else lines.value.push("Contact form submitted!");
+          })
+          .catch((e) => {
+            lines.value.push("Error sending message");
+            console.error(e);
+          })
+          .finally(() => {
+            contactForm.contactstep = 0;
+            input.value = "";
+          });
         return;
       default:
         break;
@@ -221,16 +235,16 @@ function submit() {
       lines.value = [];
       break;
 
-      // case contact
-      // case /^contact/.test(input.value):
-      //   lines.value.push("Starting contact form...");
-      //   lines.value.push("Enter Firstname");
-      //   currentStep.value = "Firstname:";
-      //   contactForm.contactstep = 1;
-      //   break;
-      // case cookies
-      // case /^cookies/.test(input.value):
-      //   startConsent();
+    // case contact
+    case /^contact/.test(input.value):
+      lines.value.push("Starting contact form...");
+      lines.value.push("Enter Firstname");
+      currentStep.value = "Firstname:";
+      contactForm.contactstep = 1;
+      break;
+    // case cookies
+    case /^cookies/.test(input.value):
+      startConsent();
       break;
     // case help
     case /^help/.test(input.value.toLocaleLowerCase()):
@@ -238,9 +252,9 @@ function submit() {
         "Available commands:",
         "cd [path] - change directory",
         "ls - list all sites",
-        "clear - clear terminal"
-        // "cookies - manage cookies"
-        // "contact - open interactive contact form"
+        "clear - clear terminal",
+        "cookies - manage cookies",
+        "contact - open interactive contact form"
       );
       break;
 
