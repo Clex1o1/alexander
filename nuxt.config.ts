@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  debug: true,
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
     "nuxt-icons",
     "@nuxtjs/supabase",
     "@stefanobartoletti/nuxt-social-share",
+    "@nuxtjs/mdc",
   ],
   runtimeConfig: {
     // private

@@ -100,12 +100,17 @@
     content: ">";
     margin-right: 0.5rem;
   }
-
-  ol {
+  <<<<<<< HEAD ol {
     @apply list-decimal pl-4;
   }
 
-  .nav-item {
+  ======= ul li {
+    display: flex;
+  }
+  ol {
+    @apply list-decimal pl-4;
+  }
+  >>>>>>>a7d4219 (add comment function + login) .nav-item {
     text-decoration: none;
   }
 
@@ -482,6 +487,9 @@
   p {
     @apply mt-4;
   }
+  p:first-child {
+    @apply mt-0;
+  }
 
   pre {
     @apply p-4 bg-slate-950 font-mono mt-4 rounded overflow-auto relative;
@@ -489,6 +497,9 @@
 
   img {
     @apply mx-auto mt-8;
+  }
+  code {
+    @apply font-mono text-gray-500;
   }
 }
 
@@ -501,4 +512,14 @@
   background-color: white;
   transform: translateY(-0.3rem);
   animation: blink 400ms infinite;
+}
+
+/* tiptap */
+.tiptap {
+  @apply border-2 border-amber-400 outline-none appearance-none min-h-48 p-4;
+  &.ProseMirror-focused {
+    animation: flickering 500ms linear forwards;
+    @apply outline-none text-white;
+    box-shadow: var(--box-shadow);
+  }
 }
