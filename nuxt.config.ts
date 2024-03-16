@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "nuxt-feedme",
     "nuxt-icons",
     "@nuxtjs/supabase",
+    "@stefanobartoletti/nuxt-social-share",
   ],
   runtimeConfig: {
     // private
