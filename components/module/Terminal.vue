@@ -13,6 +13,10 @@ import type { NavItem } from "@nuxt/content/types";
 const open = useState("terminal-open", () => false);
 const openCommand = useState("terminal-open-command", () => "");
 const lines = ref<Array<string>>([]);
+const pastCommands = ref<Array<string>>([]);
+// for scrolling to pastCommands
+const scrollPostion = ref(0);
+
 const inputElement = ref<HTMLElement | null>(null);
 const terminal = ref<HTMLElement | null>(null);
 const terminalElement = ref<HTMLElement | null>(null);
@@ -33,6 +37,7 @@ const contactForm = reactive({
   email: "",
   message: "",
 });
+
 const path = computed({
   get: () => route.fullPath,
   set: (newPath) => {
@@ -44,6 +49,7 @@ onClickOutside(terminalElement, () => {
   if (open.value) open.value = false;
 });
 
+// #region keyboard shortcuts
 watchEffect(() => {
   if ((cmd.value && k.value) || (ctrl.value && k.value)) {
     open.value = !open.value;
@@ -60,6 +66,7 @@ watchEffect(() => {
     }
   }
 });
+// #endregion
 
 // #region init
 // fetch navigation items based on path
@@ -162,6 +169,7 @@ watch(lines.value, async () => {
 });
 
 function submit() {
+  // If contact flow is active, handle the input
   if (contactForm.contactstep > 0) {
     switch (contactForm.contactstep) {
       case 1:
@@ -208,7 +216,12 @@ function submit() {
     input.value = "";
     return;
   }
+
+  pastCommands.value.push(input.value);
+  scrollPostion.value = pastCommands.value.length;
   lines.value.push(input.value);
+
+  // check input for available commands
   switch (true) {
     // cd to path based on regex
     case /^cd\s+\/?[\w-]+/.test(input.value.toLocaleLowerCase()):
@@ -295,6 +308,21 @@ function autocomplete(event: KeyboardEvent) {
     }
   }
 }
+
+function ScrollToPastCommands(direction: "up" | "down") {
+  if (contactForm.contactstep > 0) return;
+  if (pastCommands.value.length <= 0) return;
+  if (direction === "up") {
+    if (scrollPostion.value > 0) {
+      scrollPostion.value--;
+    }
+  } else if (direction === "down") {
+    if (scrollPostion.value < pastCommands.value.length) {
+      scrollPostion.value++;
+    }
+  }
+  input.value = pastCommands.value[scrollPostion.value] || "";
+}
 </script>
 <template>
   <div
@@ -339,6 +367,8 @@ function autocomplete(event: KeyboardEvent) {
             type="text"
             @keyup.enter="submit"
             @keydown.tab.prevent="autocomplete"
+            @keydown.arrow-up.prevent="ScrollToPastCommands('up')"
+            @keydown.arrow-down.prevent="ScrollToPastCommands('down')"
             v-model="input"
             ref="inputElement"
             autocapitalize="off"
