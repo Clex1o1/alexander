@@ -23,7 +23,16 @@ const openTerminalCommand = useState("terminal-open-command");
 
 <template>
   <div class="blog">
-    <p v-if="data?.date" class="text-xs">{{ formatDate(data?.date) }}</p>
+    <div class="blog-head flex justify-between content-baseline">
+      <p v-if="data?.date" class="text-xs">
+        {{ formatDate(data?.date) }}
+      </p>
+      <div class="social-share flex gap-2 text-xs">
+        <SocialShare network="twitter" :label="false" />
+        <SocialShare network="linkedin" :label="false" />
+        <SocialShare network="reddit" :label="false" />
+      </div>
+    </div>
     <ContentDoc class="content" />
     <h3 class="headline mt-8">One more thing</h3>
     <p class="">

@@ -49,7 +49,7 @@ onClickOutside(terminalElement, () => {
   if (open.value) open.value = false;
 });
 
-// #region keyboard shortcuts
+//#region keyboard shortcuts
 watchEffect(() => {
   if ((cmd.value && k.value) || (ctrl.value && k.value)) {
     open.value = !open.value;
@@ -66,9 +66,9 @@ watchEffect(() => {
     }
   }
 });
-// #endregion
+//#endregion
 
-// #region init
+//#region init
 // fetch navigation items based on path
 const { data: navigation } = await useAsyncData(
   "navigation-terminal",
@@ -94,9 +94,9 @@ function mapPaths(items: NavItem[]): string[] {
     return acc;
   }, [] as string[]);
 }
-// #endregion
+//#endregion
 
-// #region watch init command on terminal open
+//#region watch init command on terminal open
 watch(open, (isOpen) => {
   nextTick(() => {
     if (isOpen) {
@@ -120,9 +120,9 @@ watch(open, (isOpen) => {
     }
   });
 });
-// #endregion
+//#endregion
 
-// #region cookie consent
+//#region cookie consent
 async function startConsent() {
   showConsent.value = true;
   open.value = true;
@@ -144,14 +144,14 @@ function submitCookie(value?: "n" | "y") {
     open.value = false;
   }
 }
-// # endregion
+//#endregion
 
-// #region first visit
+//#region first visit
 
 if (!cookies.value) {
   startConsent();
 }
-// #endregion
+//#endregion
 
 // if new line added, scroll to bottom of terminal and remove first line if more than 1000 lines for performance reasons
 watch(lines.value, async () => {
@@ -309,7 +309,7 @@ function autocomplete(event: KeyboardEvent) {
   }
 }
 
-function ScrollToPastCommands(direction: "up" | "down") {
+function scrollToPastCommands(direction: "up" | "down") {
   if (contactForm.contactstep > 0) return;
   if (pastCommands.value.length <= 0) return;
   if (direction === "up") {
@@ -367,10 +367,11 @@ function ScrollToPastCommands(direction: "up" | "down") {
             type="text"
             @keyup.enter="submit"
             @keydown.tab.prevent="autocomplete"
-            @keydown.arrow-up.prevent="ScrollToPastCommands('up')"
-            @keydown.arrow-down.prevent="ScrollToPastCommands('down')"
+            @keydown.arrow-up.prevent="scrollToPastCommands('up')"
+            @keydown.arrow-down.prevent="scrollToPastCommands('down')"
             v-model="input"
             ref="inputElement"
+            autofocus
             autocapitalize="off"
             spellcheck="false"
             autocorrect="off"
@@ -397,6 +398,7 @@ function ScrollToPastCommands(direction: "up" | "down") {
             autocapitalize="off"
             spellcheck="false"
             autocorrect="off"
+            autocomplete="off"
           />
         </div>
       </template>
