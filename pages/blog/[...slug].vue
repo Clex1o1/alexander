@@ -33,23 +33,22 @@ const openTerminalCommand = useState("terminal-open-command");
         <SocialShare network="reddit" :label="false" />
       </div>
     </div>
-    <ContentDoc class="content" />
+    <ContentDoc class="content mt-4" />
     <h3 class="headline mt-8">One more thing</h3>
     <p class="">
       Your opinions matter! I welcome any feedback you may have. Let me know
-      your thoughts; I'm eager to hear from you!
+      your thoughts in the comments; I'm eager to hear from you!
     </p>
-    <div class="mt-4 p-4">
-      <BaseButton
-        @click="
-          () => {
-            openTerminal = true;
-            openTerminalCommand = 'contact';
-          }
-        "
-        >Send Message</BaseButton
-      >
+    <div class="comments mt-8">
+      <div class="comments-list">
+        <ModuleComments :slug="route.path">
+          <template #header>
+            <h3 class="text-2xl mt-4 headline border-b-2 border-amber-400">
+              Comments
+            </h3>
+          </template>
+        </ModuleComments>
+      </div>
     </div>
-    <!-- in the comments -->
   </div>
 </template>

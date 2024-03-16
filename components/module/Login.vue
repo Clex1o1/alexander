@@ -130,6 +130,18 @@ onBeforeRouteLeave(() => {
             placeholder="Password"
           />
         </div>
+        <div class="grid gap-2">
+          <p>
+            This site uses
+            <NuxtLink to="https://resend.com/legal/privacy-policy" external
+              >Resend</NuxtLink
+            >
+            and
+            <NuxtLink to="https://supabase.com/privacy" external
+              >Supabase</NuxtLink
+            >. By submitting you are aware of their privacy policies.
+          </p>
+        </div>
         <div class="grid gap-4 mt-4 grid-cols-2">
           <BaseButton type="submit" value="signUp" :loading="loading"
             >Sign Up!</BaseButton
