@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-import Highlight from "@tiptap/extension-highlight";
-import Typography from "@tiptap/extension-typography";
-import StarterKit from "@tiptap/starter-kit";
-import { Editor, EditorContent } from "@tiptap/vue-3";
-
 const user = useSupabaseUser();
 const route = useRoute();
 const api = useSupabaseClient();
@@ -57,26 +52,9 @@ async function addComment() {
     writeError.value = error.message;
   }
   comment.value = "";
-  editor.value?.commands.clearContent();
   loading.value = false;
   refresh();
 }
-
-//#region Editor
-const editor = ref<Editor | null>(null);
-onMounted(() => {
-  editor.value = new Editor({
-    extensions: [StarterKit, Highlight, Typography],
-    content: "",
-    onUpdate: () => {
-      comment.value = editor.value?.getHTML() || "";
-    },
-  });
-});
-onBeforeUnmount(() => {
-  editor.value?.destroy();
-});
-//#endregion
 </script>
 <template>
   <div class="comments grid gap-8">
@@ -90,12 +68,14 @@ onBeforeUnmount(() => {
       >
     </div>
     <form v-else @submit.prevent="addComment" class="">
-      <BaseInput v-model="name" placeholder="Name" required />
-      <editor-content :editor="editor" class="content mt-4" />
-      <BaseButton type="submit" :loading="loading" class="mt-4"
-        >Add Comment</BaseButton
-      >
-      <p v-if="writeError" class="text-red-600">writeError</p>
+      <client-only>
+        <BaseInput v-model="name" placeholder="Name" required />
+        <BaseEditor class="content mt-4" v-model="comment" />
+        <BaseButton type="submit" :loading="loading" class="mt-4"
+          >Add Comment</BaseButton
+        >
+        <p v-if="writeError" class="text-red-600">writeError</p>
+      </client-only>
     </form>
     <div class="list grid gap-10">
       <template v-if="PostError">

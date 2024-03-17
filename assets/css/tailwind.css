@@ -99,9 +99,7 @@
   .nav-item::before {
     content: ">";
     margin-right: 0.5rem;
-  }
-  ul li {
-    display: flex;
+    float: left;
   }
   ol {
     @apply list-decimal pl-4;

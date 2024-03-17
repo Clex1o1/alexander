@@ -4,6 +4,16 @@ definePageMeta({
   layout: "auth",
 });
 defineOgImageComponent("custom");
+
+useHead({
+  title: "Welcome",
+  meta: [
+    {
+      name: "description",
+      content: "Welcome to my site",
+    },
+  ],
+});
 const user = useSupabaseUser();
 </script>
 <template>
