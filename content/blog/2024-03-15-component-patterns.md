@@ -42,17 +42,17 @@ In addition to the naming convention, there's a difference in terms of which par
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
-  buttonText: String
-})
+  buttonText: String,
+});
 
-const { emit } = defineEmits()
+const { emit } = defineEmits();
 
 const handleClick = () => {
-  emit('click')
-}
+  emit("click");
+};
 </script>
 
 <!-- BaseButton.vue -->
@@ -71,13 +71,13 @@ const handleClick = () => {
 </template>
 
 <script setup lang="ts">
-import BaseComponent from './BaseComponent.vue'
+import BaseComponent from "./BaseComponent.vue";
 
-const moduleText = 'Module Component'
+const moduleText = "Module Component";
 
 const handleClick = () => {
-  console.log('Module Component clicked')
-}
+  console.log("Module Component clicked");
+};
 </script>
 
 <!-- ModuleComponent.vue -->
@@ -98,9 +98,9 @@ However, in certain scenarios, you need larger blocks to build software or provi
 </template>
 
 <script setup lang="ts">
-import ModuleComponent from './ModuleComponent.vue'
+import ModuleComponent from "./ModuleComponent.vue";
 
-const sectionTitle = 'Section Title'
+const sectionTitle = "Section Title";
 </script>
 
 <!-- Section.vue -->
@@ -123,10 +123,10 @@ The top-level components may vary depending on the type of software being built.
 </template>
 
 <script setup lang="ts">
-import LayoutComponent from './LayoutComponent.vue'
-import SectionComponent from './SectionComponent.vue'
+import LayoutComponent from "./LayoutComponent.vue";
+import SectionComponent from "./SectionComponent.vue";
 
-const pageTitle = 'Page Title'
+const pageTitle = "Page Title";
 </script>
 
 <!-- Layout.vue -->
@@ -147,11 +147,11 @@ const pageTitle = 'Page Title'
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Layout from './Layout.vue'; // Assuming this is the path to Layout
+import { defineComponent } from "vue";
+import Layout from "./Layout.vue"; // Assuming this is the path to Layout
 
 export default defineComponent({
-  name: 'Page',
+  name: "Page",
   components: {
     Layout,
   },
@@ -181,18 +181,18 @@ Every component can only have inner spacing, like padding, and should not introd
 
 ```css
 p {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 h1 + p {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 // You can only change the p not the h1 style if you want a different styling for p after h1
 
 // ...
 
 h1 {
-    margin-bottom: 2rem; 
+  margin-bottom: 2rem;
 }
 // you have multiple h1 and want to change only h1 before p e.g. add space is not possible this way
 ```
@@ -220,41 +220,37 @@ Essentially, [Tailwind](https://tailwindcss.com/) is based on these tokens, maki
 Take a look at the `tailwind.config.js` file:
 
 ```js
-
 // example tailwind.config.js
 
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './index.html',
-    './src/**/*.{vue,js,ts,jsx,tsx}',
-  ],
+  mode: "jit",
+  purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        primary: '#4a90e2',
-        secondary: '#ff6347',
-        accent: '#ffc107',
+        primary: "#4a90e2",
+        secondary: "#ff6347",
+        accent: "#ffc107",
       },
       spacing: {
-        '0.5': '0.125rem',
-        '1.5': '0.375rem',
-        '2.5': '0.625rem',
-        '3.5': '0.875rem',
+        0.5: "0.125rem",
+        1.5: "0.375rem",
+        2.5: "0.625rem",
+        3.5: "0.875rem",
       },
       borderRadius: {
-        'xl': '1.5rem',
+        xl: "1.5rem",
       },
       borderWidth: {
-        '3': '3px',
+        3: "3px",
       },
       fontSize: {
-        'xl': '1.5rem',
-        '2xl': '2rem',
+        xl: "1.5rem",
+        "2xl": "2rem",
       },
       fontFamily: {
-        'body': ['Roboto', 'sans-serif'],
+        body: ["Roboto", "sans-serif"],
       },
     },
   },
@@ -262,7 +258,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
-You can adjust all the settings you see here; these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://chat.openai.com/c/https) and always a custom \`\` to create our own design system, which perfectly fits into our workflow.
+You can adjust all the settings you see here; these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://tailwindcss.com/) and always a custom config to create our own design system, which perfectly fits into our workflow.
