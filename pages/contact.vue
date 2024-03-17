@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const { gtag } = useGtag();
 definePageMeta({
   title: "Contact",
 });
@@ -15,6 +16,7 @@ const openTerminalCommand = useState("terminal-open-command");
         () => {
           openTerminal = true;
           openTerminalCommand = 'contact';
+          gtag('event', 'contact-clicked');
         }
       "
       >Contact</BaseButton

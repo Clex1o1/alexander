@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const { gtag } = useGtag();
 const user = useSupabaseUser();
 const route = useRoute();
 const api = useSupabaseClient();
@@ -32,6 +33,7 @@ const {
 });
 
 async function addComment() {
+  gtag("event", "comment-submit");
   if (!comment.value) return;
   loading.value = true;
   try {
