@@ -51,6 +51,18 @@ async function addComment() {
   } catch (error) {
     writeError.value = error.message;
   }
+  try {
+    $fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        firstname: name.value,
+        message: comment.value,
+        email: user.value?.email,
+      }),
+    });
+  } catch (error) {
+    console.error(error);
+  }
   comment.value = "";
   loading.value = false;
   refresh();
