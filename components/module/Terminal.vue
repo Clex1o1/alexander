@@ -61,7 +61,7 @@ watchEffect(() => {
   if (ctrl.value && c.value) {
     input.value = "";
     if (contactForm.contactstep > 0) {
-      gtag("event", "abbourt-contact-form");
+      gtag("event", "abort-contact-form");
       lines.value.push("Contact form canceled");
       contactForm.contactstep = 0;
       currentStep.value = "";
@@ -115,7 +115,7 @@ watch(open, (isOpen) => {
     }
     if (!isOpen) {
       if (contactForm.contactstep > 0) {
-        gtag("event", "abbourt-contact-form");
+        gtag("event", "abort-contact-form");
         lines.value.push("Contact form canceled");
         contactForm.contactstep = 0;
         currentStep.value = "";
