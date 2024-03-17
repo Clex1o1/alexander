@@ -53,6 +53,7 @@ onClickOutside(terminalElement, () => {
 watchEffect(() => {
   if ((cmd.value && k.value) || (ctrl.value && k.value)) {
     open.value = !open.value;
+    gtag("event", "use-shortkcut-to-open");
   }
 });
 
@@ -60,6 +61,7 @@ watchEffect(() => {
   if (ctrl.value && c.value) {
     input.value = "";
     if (contactForm.contactstep > 0) {
+      gtag("event", "abbourt-contact-form");
       lines.value.push("Contact form canceled");
       contactForm.contactstep = 0;
       currentStep.value = "";
@@ -113,6 +115,7 @@ watch(open, (isOpen) => {
     }
     if (!isOpen) {
       if (contactForm.contactstep > 0) {
+        gtag("event", "abbourt-contact-form");
         lines.value.push("Contact form canceled");
         contactForm.contactstep = 0;
         currentStep.value = "";
@@ -176,20 +179,24 @@ function submit() {
         contactForm.firstname = input.value;
         currentStep.value = "Lastname:";
         lines.value.push("Enter Lastname");
+        gtag("event", "contact-form-firstname");
         break;
       case 2:
         contactForm.lastname = input.value;
         currentStep.value = "Email:";
         lines.value.push("Enter Email");
+        gtag("event", "contact-form-lastname");
         break;
       case 3:
         contactForm.email = input.value;
         currentStep.value = "Message:";
         lines.value.push("Enter Message");
+        gtag("event", "contact-form-email");
         break;
       case 4:
         contactForm.message = input.value;
         currentStep.value = "";
+        gtag("event", "contact-form-message");
         $fetch("/api/send", {
           method: "POST",
           body: JSON.stringify(contactForm),
@@ -207,7 +214,9 @@ function submit() {
           .finally(() => {
             contactForm.contactstep = 0;
             input.value = "";
+            gtag("event", "contact-form-send");
           });
+
         return;
       default:
         break;
@@ -234,6 +243,7 @@ function submit() {
       } else {
         lines.value.push(`cd: no such file or directory: ${newPath}`);
       }
+      gtag("event", "terminal-cd");
       break;
     // cd to upper directory
     case /^cd\s+\.\./.test(input.value.toLocaleLowerCase()):
@@ -245,14 +255,17 @@ function submit() {
       } else {
         lines.value.push(`cd: no such file or directory: ${parentPath}`);
       }
+      gtag("event", "terminal-cd");
       break;
     // list all sites
     case /^ls/.test(input.value.toLocaleLowerCase()):
       lines.value.push(sites.value?.join(" ") || "");
+      gtag("event", "terminal-ls");
       break;
     // clear terminal
     case /^clear/.test(input.value.toLocaleLowerCase()):
       lines.value = [];
+      gtag("event", "terminal-clear");
       break;
 
     // case contact
@@ -261,6 +274,7 @@ function submit() {
       lines.value.push("Enter Firstname");
       currentStep.value = "Firstname:";
       contactForm.contactstep = 1;
+      gtag("event", "terminal-contact-start");
       break;
     // case cookies
     case /^cookies/.test(input.value):
@@ -276,12 +290,16 @@ function submit() {
         "cookies - manage cookies",
         "contact - open interactive contact form"
       );
+      gtag("event", "terminal-help");
       break;
 
     default:
       lines.value.push(
         `command not found: ${input.value.toLocaleLowerCase()}. Try 'help'`
       );
+      gtag("event", "terminal-command-not-found", {
+        value: input.value.toLocaleLowerCase(),
+      });
   }
 
   // clear input after successful command
@@ -336,10 +354,7 @@ function scrollToPastCommands(direction: "up" | "down") {
         () => {
           open = !open;
           inputElement?.focus();
-          gtag('event', 'terminal', {
-            event_category: 'interaction',
-            event_label: open ? 'open' : 'close',
-          });
+          gtag('event', 'terminal-toggle');
         }
       "
     >

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import VueWriter from "vue-writer";
+const { gtag } = useGtag();
 const supabase = useSupabaseClient();
 const router = useRouter();
 const email = ref("");
@@ -31,6 +32,9 @@ async function login(event: SubmitEvent) {
         if (res.error) {
           errorHappened.value = true;
           error.value = res.error.message;
+          gtag("event", "signup-error", {
+            value: res.error.message,
+          });
           return;
         }
         error.value = "";
@@ -60,6 +64,9 @@ async function signIn() {
       if (res.error) {
         errorHappened.value = true;
         error.value = res.error.message;
+        gtag("event", "login-error", {
+          value: res.error.message,
+        });
         return;
       }
       errorHappened.value = false;
@@ -77,6 +84,7 @@ watch(
       // wait for 1 second and redirect
       setTimeout(() => {
         if (user.value) {
+          gtag("event", "login-success");
           if (referrer) router.push(referrer);
           else router.push("/home");
         }
