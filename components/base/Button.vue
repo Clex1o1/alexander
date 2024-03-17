@@ -15,7 +15,7 @@ defineProps<{
     </template>
     <span v-else class="blinker">_</span></NuxtLink
   >
-  <button v-else class="button">
+  <button v-else class="button" :disabled="loading">
     <slot></slot
     ><template v-if="loading">
       <ClientOnly

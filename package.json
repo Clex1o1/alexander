@@ -22,17 +22,13 @@
     "nuxt-gtag": "^1.2.0",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
+    "nuxt-tiptap-editor": "^1.1.0",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@nuxt/content": "^2.11.0",
     "@nuxt/image": "^1.3.0",
-    "@tiptap/extension-highlight": "^2.2.4",
-    "@tiptap/extension-typography": "^2.2.4",
-    "@tiptap/pm": "^2.2.4",
-    "@tiptap/starter-kit": "^2.2.4",
-    "@tiptap/vue-3": "^2.2.4",
     "@vercel/analytics": "^1.1.2",
     "@vueuse/nuxt": "^10.7.2",
     "nuxt-icons": "^3.2.1",

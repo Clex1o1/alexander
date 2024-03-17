@@ -100,17 +100,15 @@
     content: ">";
     margin-right: 0.5rem;
   }
-  <<<<<<< HEAD ol {
-    @apply list-decimal pl-4;
-  }
-
-  ======= ul li {
-    display: flex;
-  }
   ol {
     @apply list-decimal pl-4;
   }
-  >>>>>>>a7d4219 (add comment function + login) .nav-item {
+
+  ul li {
+    float: left;
+  }
+
+  .nav-item {
     text-decoration: none;
   }
 

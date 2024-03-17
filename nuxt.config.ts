@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@stefanobartoletti/nuxt-social-share",
     "@nuxtjs/mdc",
+    "nuxt-tiptap-editor",
   ],
   runtimeConfig: {
     // private
@@ -23,7 +24,9 @@ export default defineNuxtConfig({
       // public
     },
   },
-
+  tiptap: {
+    prefix: "Tiptap", //prefix for Tiptap imports, composables not included
+  },
   content: {
     highlight: {
       theme: "github-dark",
