@@ -29,9 +29,9 @@ Embarking as a PHP developer during version 5.3, my journey evolved to
 spotlight the frontend and JavaScript. Since 2019, TypeScript has become
 my primary language, showcasing proficiency in:
 
-- Vue JS
-- Nuxt JS
-- Nest JS
+- Vue
+- Nuxt
+- Nest
 - Directus
 - Strapi
 
@@ -67,7 +67,7 @@ expertise.
 ## Specialization and Learnings
 
 With over a decade of experience, I specialize in TypeScript, Vue.js,
-Nuxt.js, TailwindCSS, and Nest.js. My capabilities span various
+Nuxt, TailwindCSS, and NestJS. My capabilities span various
 applications, including multi-tenancy applications, design systems, web
 apps, webshops, and corporate websites.
 
