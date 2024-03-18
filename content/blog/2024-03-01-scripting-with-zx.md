@@ -158,3 +158,7 @@ await $`git push --tags`;
 For shell pros, this is probably a piece of cake, but for me, the workflow with ZX was pleasantly successful.
 
 In the next post, I'll share my experience and pattern of arranging and managing components based on design systems.
+
+## Update
+
+After listening to a recent podcast episode, I was introduced to a compelling feature of alternative shells like ZX and The Bun Shell. These tools transcend the limitations imposed by the varying shell environments of different operating systems. By leveraging ZX or The Bun Shell, developers can create scripts that are seamlessly executable across multiple platforms. This cross-operating system compatibility is a significant boon, eliminating the need to tailor scripts to the specific nuances of each OS's shell environment. It underscores the versatility and efficiency that such modern tools bring to the table, streamlining development workflows in a way that was previously challenging.
