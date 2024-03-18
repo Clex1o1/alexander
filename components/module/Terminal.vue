@@ -153,8 +153,6 @@ function submitCookie(value?: "n" | "y") {
 
 if (!cookies.value) {
   startConsent();
-} else if (cookies.value !== "rejected") {
-  grantConsent();
 }
 //#endregion
 
