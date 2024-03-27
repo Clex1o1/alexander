@@ -137,10 +137,10 @@ async function startConsent() {
 function submitCookie(value?: "n" | "y") {
   const localInput = value || input.value.toLocaleLowerCase();
   if (localInput === "y" || localInput === "yes") {
-    revokeConsent();
     grantConsent();
     showConsent.value = false;
     open.value = false;
+    cookies.value = "accepted";
   } else if (localInput === "n" || localInput === "no") {
     cookies.value = "rejected";
     revokeConsent();
