@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { grantConsent } = useGtag();
-const cookies = useCookie("_ga", { maxAge: 60 * 60 * 24 * 30 });
+const cookies = useCookie("consent", { maxAge: 60 * 60 * 24 * 30 });
 if (cookies.value && cookies.value !== "rejected") {
   grantConsent();
 }
