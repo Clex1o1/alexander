@@ -19,7 +19,7 @@
     "@types/uuid": "^9.0.8",
     "nuxt": "^3.10.0",
     "nuxt-feedme": "^1.0.0",
-    "nuxt-gtag": "^1.2.0",
+    "nuxt-gtag": "^2.0.5",
     "nuxt-icon": "^0.6.8",
     "nuxt-og-image": "^3.0.0-rc.38",
     "nuxt-tiptap-editor": "^1.1.0",

@@ -109,7 +109,7 @@ export default defineNuxtConfig({
     ],
   },
   gtag: {
-    initialConsent: false,
+    enabled: false,
   },
   supabase: {
     redirect: false,

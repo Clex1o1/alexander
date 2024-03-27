@@ -25,7 +25,7 @@ const router = useRouter();
 const route = useRoute();
 const { cmd, ctrl, k, c } = useMagicKeys();
 const availableCommands = ["help", "cd", "ls", "clear", "contact"];
-const { gtag, grantConsent, revokeConsent } = useGtag();
+const { gtag, disableAnalytics, enableAnalytics, initialize } = useGtag();
 const cookies = useCookie("consent", { maxAge: 60 * 60 * 24 * 30 });
 const showConsent = ref(false);
 const currentStep = ref("");
@@ -137,13 +137,14 @@ async function startConsent() {
 function submitCookie(value?: "n" | "y") {
   const localInput = value || input.value.toLocaleLowerCase();
   if (localInput === "y" || localInput === "yes") {
-    grantConsent();
+    initialize();
+    enableAnalytics();
     showConsent.value = false;
     open.value = false;
     cookies.value = "accepted";
   } else if (localInput === "n" || localInput === "no") {
     cookies.value = "rejected";
-    revokeConsent();
+    disableAnalytics();
     showConsent.value = false;
     open.value = false;
   }
