@@ -1,6 +1,6 @@
 ---
 title: Component Patterns
-date: 2024-03-15T00:00:00.000Z
+date: 2024-03-29T00:00:00.000Z
 ---
 
 As your software and team grow, it becomes increasingly important to structure your code efficiently. You may already be familiar with design patterns and using frameworks to address some of these challenges.
