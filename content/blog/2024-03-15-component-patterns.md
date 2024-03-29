@@ -25,7 +25,7 @@ However, we've expanded upon this pattern. Because the atomic design pattern is 
 
 Our components aren't named after chemical parts. We found it confusing to introduce another language into our already complex domains. Our smallest units are **base components**, which are essentially the same as atoms. Additionally, we have **module components** and **section components**. Just like in atomic design, our **modules** are built with **base** components, and **sections** are built with **base** and **module** components. The naming is inspired by the semantic HTML websites have, representing the way users recognize the parts of software.
 
-::BaseImage{imgSrc="/images/website-example.png"}
+::BaseImage{imgSrc="/images/website-example-mh.jpg"}
 ::
 
 _Genererated by_ [v0](https://v0.dev/)
