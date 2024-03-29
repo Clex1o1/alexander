@@ -100,12 +100,9 @@
     content: ">";
     margin-right: 0.5rem;
   }
+
   ol {
     @apply list-decimal pl-4;
-  }
-
-  ul li {
-    float: left;
   }
 
   .nav-item {
