@@ -104,6 +104,11 @@
   ol {
     @apply list-decimal pl-4;
   }
+
+  ol {
+    @apply list-decimal pl-4;
+  }
+
   .nav-item {
     text-decoration: none;
   }
@@ -488,6 +493,11 @@
   pre {
     @apply p-4 bg-slate-950 font-mono mt-4 rounded overflow-auto relative;
   }
+
+  img {
+    @apply mx-auto mt-8;
+  }
+
   code {
     @apply font-mono text-gray-500;
   }

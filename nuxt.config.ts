@@ -32,6 +32,10 @@ export default defineNuxtConfig({
       theme: "github-dark",
     },
   },
+  components: {
+    global: true,
+    dirs: ["~/components"],
+  },
   feedme: {
     content: {
       feed: {
