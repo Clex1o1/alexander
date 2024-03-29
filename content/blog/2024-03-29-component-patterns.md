@@ -1,13 +1,13 @@
 ---
 title: Component Patterns
-date: 2024-03-31T00:00:00.000Z
+date: 2024-03-29T00:00:00.000Z
 ---
 
-As your software and team grow, it becomes increasingly important to structure your code efficiently. You may already be familiar with design patterns and using frameworks to address some of these challenges.
+As your software and team grows, it becomes increasingly important to structure your code efficiently. You may already be familiar with design patterns and using frameworks to address some of these challenges.
 
 Allow me to share some insights into how my team and I structure our components. Our foundation is a component-based framework. While we leverage [Vue.js](https://vuejs.org/) and [Nuxt](https://nuxt.com/), similar approaches can be achieved with React or even Twig or Blade template languages. While I lack experience with other technologies beyond web frameworks, I can imagine that this approach could be applicable elsewhere.
 
-At the end of our efforts, we aim to have a Design System and component library.
+At the end of our efforts, we aim to have a design system and component library.
 
 _These insights are based on my own experiences, and while you may find or use other solutions, they can be equally valid. In my opinion, there is no single correct way. Take what you find useful and discard the rest._ 🤞
 
@@ -207,7 +207,7 @@ This pattern enables us to build frontends that are structured, reusable, and sc
 
 ## Tailwind
 
-I misspoke when I mentioned that the smallest unit is **base components**; there's actually a smaller one:
+Strictly speaking there is something even smaller than **base components**:
 
 **Design tokens**
 
@@ -261,4 +261,4 @@ module.exports = {
 };
 ```
 
-You can adjust all the settings you see here; these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://tailwindcss.com/) and always a custom config to create our own design system, which perfectly fits into our workflow.
+You can adjust all the settings you see here: these are the tokens. These tokens are also available in [Figma](https://www.figma.com/) or other design software. While there are automated export solutions to extract tokens from design software, I lack experience with them. Nonetheless, we use [Tailwind](https://tailwindcss.com/) and always a custom config to create our own design system, which perfectly fits into our workflow.
