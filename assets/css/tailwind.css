@@ -170,6 +170,10 @@
     color: white;
   }
 
+  .button:disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
   .flicker:hover {
     animation: flickering 500ms linear forwards;
     box-shadow: none !important;

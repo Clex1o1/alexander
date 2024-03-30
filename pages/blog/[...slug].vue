@@ -34,11 +34,16 @@ const openTerminalCommand = useState("terminal-open-command");
       </div>
     </div>
     <ContentDoc class="content mt-4" />
+    <div class="likes mt-8 flex items-center gap-4">
+      <h3 class="headline ml-auto">Like it?</h3>
+      <ModuleLike class=""></ModuleLike>
+    </div>
     <h3 class="headline mt-8">One more thing</h3>
     <p class="">
       Your opinions matter! I welcome any feedback you may have. Let me know
       your thoughts in the comments; I'm eager to hear from you!
     </p>
+
     <div class="comments mt-8">
       <div class="comments-list">
         <ModuleComments :slug="route.path">
