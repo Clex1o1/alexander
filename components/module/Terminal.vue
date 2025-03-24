@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { NavItem } from "@nuxt/content/types";
+import type { ContentNavigationItem } from '@nuxt/content';
+
 /**
  * A Terminal to navigate through my website
  * Commands to implement:
@@ -85,10 +86,10 @@ const sites = computed(() => {
   return mapPaths(navigation.value);
 });
 
-function mapPaths(items: NavItem[]): string[] {
+function mapPaths(items: ContentNavigationItem[]): string[] {
   return items.reduce((acc, item) => {
-    if (item._path) {
-      acc.push(item._path);
+    if (item.path) {
+      acc.push(item.path);
     }
     if (item.children) {
       acc.push(...mapPaths(item.children));
@@ -345,55 +346,33 @@ function scrollToPastCommands(direction: "up" | "down") {
 }
 </script>
 <template>
-  <div
-    class="terminal transition-transform duration-300 ease-in-out"
-    :class="{ 'translate-y-full': !open, 'translate-y-0': open }"
-    ref="terminalElement"
-  >
-    <button
-      class="absolute rounded-t -translate-y-full right-4 bg-slate-950 px-4 py-4"
-      @click="
-        () => {
-          open = !open;
-          inputElement?.focus();
-          gtag('event', 'terminal-toggle');
-        }
-      "
-    >
+  <div class="terminal transition-transform duration-300 ease-in-out"
+    :class="{ 'translate-y-full': !open, 'translate-y-0': open }" ref="terminalElement">
+    <button class="absolute rounded-t -translate-y-full right-4 bg-slate-950 px-4 py-4" @click="
+      () => {
+        open = !open;
+        inputElement?.focus();
+        gtag('event', 'terminal-toggle');
+      }
+    ">
       <NuxtIcon v-if="!open" name="code-greater-than-or-equal" />
       <NuxtIcon v-else name="angles-down" />
     </button>
-    <div
-      class="bg-slate-950 max-h-96 overflow-auto p-4"
-      @click="inputElement?.focus()"
-      ref="terminal"
-    >
+    <div class="bg-slate-950 max-h-96 overflow-auto p-4" @click="inputElement?.focus()" ref="terminal">
       <template v-if="!showConsent">
         <div class="lines">
           <div v-for="line in lines" class="line">> {{ line }}</div>
         </div>
         <div class="flex gap-1 flex-nowrap">
-          <span v-if="contactForm.contactstep > 0" class="min-w-fit"
-            >>
+          <span v-if="contactForm.contactstep > 0" class="min-w-fit">>
             {{ currentStep }}
             $
           </span>
           <span v-else class="min-w-fit">> {{ path }} $ </span>
-          <input
-            class="bg-slate-950 appearance-none outline-none w-full"
-            type="text"
-            @keyup.enter="submit"
-            @keydown.tab.prevent="autocomplete"
-            @keydown.arrow-up.prevent="scrollToPastCommands('up')"
-            @keydown.arrow-down.prevent="scrollToPastCommands('down')"
-            v-model="input"
-            ref="inputElement"
-            autofocus
-            autocapitalize="off"
-            spellcheck="false"
-            autocorrect="off"
-            autocomplete="off"
-          />
+          <input class="bg-slate-950 appearance-none outline-none w-full" type="text" @keyup.enter="submit"
+            @keydown.tab.prevent="autocomplete" @keydown.arrow-up.prevent="scrollToPastCommands('up')"
+            @keydown.arrow-down.prevent="scrollToPastCommands('down')" v-model="input" ref="inputElement" autofocus
+            autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off" />
         </div>
       </template>
       <template v-else>
@@ -405,18 +384,9 @@ function scrollToPastCommands(direction: "up" | "down") {
               <button @click="submitCookie('n')">(n) No</button>
             </div>
           </div>
-          <input
-            class="bg-slate-950 appearance-none outline-none w-full"
-            type="text"
-            @keyup.enter="submitCookie(undefined)"
-            v-model="input"
-            ref="inputElement"
-            autofocus
-            autocapitalize="off"
-            spellcheck="false"
-            autocorrect="off"
-            autocomplete="off"
-          />
+          <input class="bg-slate-950 appearance-none outline-none w-full" type="text"
+            @keyup.enter="submitCookie(undefined)" v-model="input" ref="inputElement" autofocus autocapitalize="off"
+            spellcheck="false" autocorrect="off" autocomplete="off" />
         </div>
       </template>
     </div>
