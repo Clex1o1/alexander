@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/icon": "^1.11.0",
     "@nuxthq/studio": "^2.2.1",
     "@nuxtjs/mdc": "^0.16.1",
     "@nuxtjs/supabase": "^1.5.0",
@@ -18,9 +19,8 @@
     "@stefanobartoletti/nuxt-social-share": "^1.2.1",
     "@types/uuid": "^10.0.0",
     "nuxt": "^3.16.1",
-    "nuxt-feedme": "file:../oss/nuxt-feedme/nuxt-feedme-1.0.1.tgz",
+    "nuxt-feedme": "https://github.com/Clex1o1/nuxt-feedme.git#update-nuxt-content-3.4",
     "nuxt-gtag": "^3.0.2",
-    "nuxt-icon": "^1.0.0-beta.7",
     "nuxt-og-image": "^5.0.5",
     "nuxt-tiptap-editor": "^2.1.4",
     "vue": "^3.5.13",
