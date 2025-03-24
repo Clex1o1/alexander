@@ -25,7 +25,7 @@ function formatDate(date: string) {
         {{ formatDate(data?.date) }}
       </p>
       <div class="social-share flex gap-2 text-xs ml-auto">
-        <SocialShare network="twitter" :label="false" />
+        <SocialShare network="bluesky" :label="false" />
         <SocialShare network="linkedin" :label="false" />
         <SocialShare network="reddit" :label="false" />
       </div>
