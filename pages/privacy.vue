@@ -375,13 +375,11 @@ defineOgImageComponent("custom");
       Einhaltung der gesetzlichen Vorgaben beim Versand von Newslettern
       (berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO). Die
       Speicherung in der Blacklist ist zeitlich nicht befristet.
-      <strong
-        >Sie k&ouml;nnen der Speicherung widersprechen, sofern Ihre Interessen
-        unser berechtigtes Interesse &uuml;berwiegen.</strong
-      >
+      <strong>Sie k&ouml;nnen der Speicherung widersprechen, sofern Ihre Interessen
+        unser berechtigtes Interesse &uuml;berwiegen.</strong>
     </p>
     <p>
-      Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+      Quelle: <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
     </p>
   </article>
 </template>
