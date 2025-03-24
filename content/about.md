@@ -5,9 +5,7 @@ title: About
 # A quick summary about me.
 
 Maybe you already read: my name is Alexander Classen and I'm a
-passionate fullstack developer from Germany. I'm working at the agency
-[Westwerk](https://www.westwerk.ac) in
-Aachen, Germany.
+passionate fullstack developer from Germany.
 
 My focus constantly shifts depending on the demands of the team or
 project, or the trends I am currently pursuing. My strength lies
