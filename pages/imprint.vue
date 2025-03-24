@@ -34,9 +34,8 @@ defineOgImageComponent("custom");
     </p>
     <p>
       Quelle:
-      <a href="https://www.e-recht24.de/impressum-generator.html"
-        >https://www.e-recht24.de/impressum- generator.html</a
-      >
+      <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank">https://www.e-recht24.de/impressum-
+        generator.html</a>
     </p>
   </article>
 </template>
