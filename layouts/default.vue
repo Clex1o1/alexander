@@ -3,9 +3,10 @@ const router = useRouter();
 
 const route = useRoute();
 const slug = computed(() => route.fullPath);
+
 const { data, refresh } = await useAsyncData(
   "pages",
-  () => queryContent(route.fullPath).findOne(),
+  () => queryCollection('blog').path(route.fullPath).first(),
   {
     watch: [slug],
   }
@@ -22,10 +23,7 @@ const errorHappened = useState("errorHappened", () => false);
       <slot name="header"></slot>
       <div class="container mx-auto pt-8">
         <transition name="zapp-out" mode="out-in">
-          <h1
-            class="headline text-4xl text-wrap"
-            :key="router.currentRoute.value.path"
-          >
+          <h1 class="headline text-4xl text-wrap" :key="router.currentRoute.value.path">
             {{
               data?.title || router.currentRoute.value.meta.title || "&nbsp;"
             }}
@@ -35,15 +33,9 @@ const errorHappened = useState("errorHappened", () => false);
           <aside class="border-2 border-amber-400 p-4">
             <h2 class="font-headline font-bold">Menu</h2>
             <nav class="flex md:grid gap-y-1 gap-x-8 mt-4">
-              <NuxtLink class="nav-item" to="/home"
-                ><span class="underline">Home</span></NuxtLink
-              >
-              <NuxtLink class="nav-item" to="/blog"
-                ><span class="underline">Blog</span></NuxtLink
-              >
-              <NuxtLink class="nav-item" to="/about"
-                ><span class="underline">About</span></NuxtLink
-              >
+              <NuxtLink class="nav-item" to="/home"><span class="underline">Home</span></NuxtLink>
+              <NuxtLink class="nav-item" to="/blog"><span class="underline">Blog</span></NuxtLink>
+              <NuxtLink class="nav-item" to="/about"><span class="underline">About</span></NuxtLink>
             </nav>
           </aside>
           <main class="border-2 border-amber-400 p-4 md:col-span-3 min-w-0">

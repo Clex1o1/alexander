@@ -4,8 +4,8 @@ definePageMeta({
 });
 defineOgImageComponent("custom");
 const route = useRoute();
-const { data, pending, status } = await useAsyncData(route.path, () =>
-  queryContent(route.fullPath).findOne()
+const { data } = await useAsyncData(route.path, () =>
+  queryCollection('blog').path(route.path).first()
 );
 
 function formatDate(date: string) {
@@ -30,12 +30,12 @@ function formatDate(date: string) {
         <SocialShare network="reddit" :label="false" />
       </div>
     </div>
-    <ContentDoc class="content mt-4" ref="doc">
+    <ContentRenderer class="content mt-4" :value="data" v-if="data">
       <template #not-found>
         <p>The article you were looking for was not found.</p>
         <p>Take a look at the <nuxt-link to="/blog">Blog</nuxt-link></p>
       </template>
-    </ContentDoc>
+    </ContentRenderer>
     <template v-if="data">
       <div class="likes mt-8 flex items-center gap-4">
         <h3 class="headline ml-auto">Like it?</h3>

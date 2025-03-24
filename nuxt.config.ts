@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === "development" },
   debug: process.env.NODE_ENV === "development",
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
@@ -18,24 +19,33 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "nuxt-tiptap-editor",
   ],
+
   runtimeConfig: {
     // private
     public: {
       // public
     },
   },
+
   tiptap: {
     prefix: "Tiptap", //prefix for Tiptap imports, composables not included
   },
+
   content: {
-    highlight: {
-      theme: "github-dark",
+    build: {
+      markdown: {
+        highlight: {
+          theme: "github-dark",
+        },
+      },
     },
   },
+
   components: {
     global: true,
     dirs: ["~/components"],
   },
+
   feedme: {
     content: {
       feed: {
@@ -65,12 +75,13 @@ export default defineNuxtConfig({
         },
         mapping: [
           ["link", "_path"],
-          ["date", "date"],
+          ["date", "date", (value) => (value ? new Date(value) : value)],
           ["image", "https://www.the-great.dev/__og-image__/image/og.png"],
         ],
       },
     },
   },
+
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
@@ -84,6 +95,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "zapp-out", mode: "out-in" },
     layoutTransition: { name: "zapp-out", mode: "out-in" },
   },
+
   vite: {
     vue: {
       script: {
@@ -92,10 +104,12 @@ export default defineNuxtConfig({
       },
     },
   },
+
   site: {
     // production URL
     url: "https://www.the-great.dev",
   },
+
   ogImage: {
     fonts: [
       {
@@ -112,10 +126,14 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   gtag: {
     enabled: false,
   },
+
   supabase: {
     redirect: false,
   },
+
+  compatibilityDate: "2025-03-23",
 });

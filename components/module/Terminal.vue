@@ -74,7 +74,7 @@ watchEffect(() => {
 // fetch navigation items based on path
 const { data: navigation } = await useAsyncData(
   "navigation-terminal",
-  () => fetchContentNavigation(),
+  () => queryCollectionNavigation('blog'),
   { watch: [path] }
 );
 // map the sites from the navigation items to get the paths and add site without file
