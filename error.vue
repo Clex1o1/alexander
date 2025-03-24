@@ -35,7 +35,7 @@ const handleError = () => {
       <section class="flex flex-col items-center justify-center h-screen">
         <h2 class="text-2xl md:text-4xl text-amber-400 headline">Game over</h2>
         <h1 class="text-7xl md:text-9xl text-amber-400 headline">
-          {{ error.statusCode }}
+          {{ error?.statusCode || "unknown Error" }}
         </h1>
         <base-button @click="handleError">restart</base-button>
       </section>
