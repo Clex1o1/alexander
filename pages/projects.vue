@@ -9,7 +9,7 @@ defineOgImageComponent("custom");
   <article class="projects">
     <section>
       <p class="mt-4">
-        In addition to my permanent position at Westwerk, I engage in various
+        In addition to my permanent position, I engage in various
         projects, either independently or with a small team, depending on my
         mood.
       </p>
