@@ -1,6 +1,6 @@
 ---
 title: "Leadership as a Feeling: My Personal Philosophy"
-date: 2025-04-03T00:00:00.000Z
+date: 2025-04-04T00:00:00.000Z
 ---
 
 # Leadership as a Feeling: My Personal Philosophy
@@ -9,7 +9,7 @@ date: 2025-04-03T00:00:00.000Z
 
 Let’s talk about something that’s been on my mind for years—and even more so over the past few months: **Leadership.**
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/leadership-title-banner.png"}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/leadership-title-banner.png"}
 ::
 
 **Disclaimer:** This is my personal take, based on my experience. No universal truth here—and definitely no checklist.
@@ -32,14 +32,14 @@ What mattered most to me from the beginning was creating a place where people ac
 
 To support that, I introduced rituals and organized after-work activities like movie nights (yes, with tech documentaries!), game nights, or a relaxed evening at the bar. It was never mandatory—just something people genuinely enjoyed.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/team-collaboration.png" .inline-left}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/team-collaboration.png" .inline-left}
 ::
 
 That was my first step into building culture. And the first lesson I learned: if you want your team to show up, **you** have to show up. So I did. I made time. I was present—for questions, for fun, for support. I was lacking some skills and wasn’t the most experienced or confident, but I made myself available—investing time to make up for what I lacked. Sometimes being present is what matters most.
 
 Over the years, I improved through reading, watching, and often trial and error—gradually building up the skills I didn’t have in the beginning. Not every idea resonated. For example, I often came across comparisons between software teams and sports teams. But that analogy never really sat right with me. I wasn’t trying to coach from the sidelines—I wanted to be in there with my team, supporting them side by side.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/planning-together.png" .inline-right}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/planning-together.png" .inline-right}
 ::
 
 Eventually, I was leading multiple projects at once—sometimes up to seven. 🤯 I had to rely on my team. And I learned that the only way to truly do that was through honesty. I admitted my mistakes. I took responsibility. And by doing so, I created an environment where others felt safe to do the same. Slowly, we built a culture that embraced failure as part of the process.
@@ -54,7 +54,7 @@ Working on the team is working on myself. Every investment pays off. If I follow
 
 That may sound radical. But in a great team, these practices become a shared act of respect—not because they’re enforced, but because everyone wants to support each other.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/team-trust.png" .inline-full}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/team-trust.png" .inline-full}
 ::
 
 ---
@@ -83,7 +83,7 @@ It should be more important to help a teammate than to finish your own task. Tha
 
 Support builds trust. Trust creates communication. And communication ensures no one feels lost. We've all had that bug or feature that made us feel dumb. "Why is this so hard for me? Am I the only one struggling with this?"
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/lead-by-example.png" .inline-left}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/lead-by-example.png" .inline-left}
 ::
 
 In the right culture, you can ask "dumb" questions (spoiler: they’re usually not dumb), and you quickly realize others face the same challenges. I’ve been there more times than I can count. And more often than not, as soon as I shared my struggle, I heard someone say, “Oh, I had the exact same issue last week.” That’s the moment you stop feeling alone.
@@ -106,7 +106,7 @@ When the pandemic hit, my team went fully remote. And our culture, which had rel
 
 We had to rebuild.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/remote-workspace.png" .inline-full}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/remote-workspace.png" .inline-full}
 ::
 
 First, we encouraged non-work conversations in our chat tool. Then we set up a persistent video call with themed rooms: focus, casual, do-not-disturb. It reminded me of old-school gaming setups like TeamSpeak or Discord servers. Back in the day, my friends and I used to hang out on those voice channels even when we weren’t actively playing—just chatting, sharing ideas, or doing our own thing together. We recreated this feeling at work. Some people didn’t show up every day. But most days, we saw and heard from each other without needing a meeting.
@@ -147,7 +147,7 @@ If you say culture matters but don’t live it, people won’t buy it.
 
 Leadership is an active part of your job. And that should be recognized—especially by companies hiring or promoting someone into a leadership position. Often, mid-level managers are expected to lead while still carrying a full load of specialist work. But leadership isn't a side task. It's a full role in itself.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/agile-workflow.png" .inline-left}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/agile-workflow.png" .inline-left}
 ::
 
 As a leader, you're responsible for your team's success—and their struggles. If someone on the team fails, it's not just their failure. It's on you too. Maybe the expectations weren't clear. Maybe the support wasn't there. Maybe you didn't step in early enough. That doesn’t mean taking the blame for everything—but it does mean owning your part in it and creating a space where people can grow and learn without fear.
@@ -172,7 +172,7 @@ That doesn’t mean you have to be the best coder on the team. But it helps when
 
 Not because no one else can—but because it shows that you’re not above it. You’re in it together.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/team-support.png" .inline-right}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/team-support.png" .inline-right}
 ::
 
 When your team sees you solving a real issue, struggling with the same environment quirks or debugging the same weird error, it levels the field. You’re not just “managing.” You’re contributing, even in small ways.
@@ -187,7 +187,7 @@ Plan together.
 
 Planning might sound like a dry or overly technical topic, but for me it's deeply connected to the core mechanics of a working team.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/continuous-learning.png" .inline-left}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/continuous-learning.png" .inline-left}
 ::
 
 In software development, the act of planning isn’t about creating the perfect roadmap—it’s about surfacing blind spots early on and thinking things through as a group. Even the most experienced developers overlook things. That’s why it’s valuable to talk through features and architectural decisions together _before_ anyone writes code.
@@ -206,7 +206,7 @@ Are conflicts good? I’m not sure. But respectful disagreement? That’s where 
 
 Agile isn’t new. But many teams still don’t fully commit to it.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/team-connection.png" .inline-right}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/team-connection.png" .inline-right}
 ::
 
 You always need a strategy. One crucial thing I’ve learned: you can only truly prioritize one topic at a time. Trying to work on multiple priorities at once just doesn’t work. In my experience, tasks can only have two priorities—either it’s a priority, or it’s not. The only real exception is a blocker: a bug that breaks your system. Everything else should wait its turn.
@@ -249,7 +249,7 @@ But at the same time, that optimism is part of what helps me build open, positiv
 
 **And to all the teams I’ve worked with—thank you.** You’ve helped shape how I lead, how I learn, and how I show up. Every team, every project, every conversation has left a mark. I’m carrying that with me.
 
-::BaseImage{imgSrc="/images/2025-04-03-lets-leadership-as-a-feeling/leadership-conclusion.png"}
+::BaseImage{imgSrc="/images/2025-04-04-lets-leadership-as-a-feeling/leadership-conclusion.png"}
 ::
 
 ---
