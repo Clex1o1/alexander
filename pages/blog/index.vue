@@ -14,13 +14,11 @@ const blog = queryContent("blog");
   <div class="blog-list">
     <ContentNavigation v-slot="{ navigation }" :query="blog">
       <ul>
-        <li
-          v-for="blogEntry in navigation?.at(0)?.children"
-          :key="blogEntry._id"
-        >
+        <li v-for="blogEntry in navigation?.at(0)?.children?.sort((a, b) => b._path.localeCompare(a._path))"
+          :key="blogEntry._id">
           <NuxtLink :to="blogEntry._path">{{ blogEntry.title }}</NuxtLink>
         </li>
-      </ul></ContentNavigation
-    >
+      </ul>
+    </ContentNavigation>
   </div>
 </template>
