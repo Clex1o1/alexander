@@ -216,6 +216,11 @@
     animation: blink 400ms linear infinite;
     color: white;
   }
+
+  hr {
+    @apply my-8 border-amber-400 border-2 block clear-both;
+    box-shadow: var(--box-shadow);
+  }
 }
 
 /* Error State */
@@ -476,14 +481,15 @@
 /* Text Formatting */
 .content {
   h1,
-  h2 {
-    @apply headline font-headline font-bold mt-4;
+  h2, h3 {
+    @apply headline font-headline font-bold mt-4 clear-both;
     a {
       @apply no-underline;
     }
   }
   h1:first-child,
-  h2:first-child {
+  h2:first-child,
+  h3:first-child {
     @apply mt-0;
   }
 
@@ -499,11 +505,24 @@
   }
 
   img {
-    @apply mx-auto mt-8;
+    @apply mx-auto mt-8 w-full h-auto; 
   }
 
   code {
     @apply font-mono text-gray-500;
+  }
+  .inline-left {
+    @apply lg:float-left lg:w-6/12 lg:pt-4 lg:pb-8 lg:px-4 lg:mt-0;
+  }
+  .inline-right {
+    @apply lg:float-right lg:w-6/12 lg:pt-4 lg:pb-8 lg:px-4 lg:mt-0;
+  }
+  .inline-full {
+    @apply lg:w-8/12;
+  }
+  
+  blockquote {
+    @apply border-l-2 border-amber-400 pl-4 py-4 mt-4;
   }
 }
 
