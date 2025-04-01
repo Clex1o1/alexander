@@ -223,6 +223,11 @@
     animation: blink 400ms linear infinite;
     color: white;
   }
+
+  hr {
+    @apply my-8 border-amber-400 border-2 block clear-both;
+    box-shadow: var(--box-shadow);
+  }
 }
 
 /* Error State */
@@ -550,6 +555,19 @@
   * {
     box-shadow: none;
     text-shadow: none;
+  }
+  .inline-left {
+    @apply lg:float-left lg:w-6/12 lg:pt-4 lg:pb-8 lg:px-4 lg:mt-0;
+  }
+  .inline-right {
+    @apply lg:float-right lg:w-6/12 lg:pt-4 lg:pb-8 lg:px-4 lg:mt-0;
+  }
+  .inline-full {
+    @apply lg:w-8/12;
+  }
+  
+  blockquote {
+    @apply border-l-2 border-amber-400 pl-4 py-4 mt-4;
   }
 }
 
