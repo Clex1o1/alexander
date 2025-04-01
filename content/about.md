@@ -82,17 +82,6 @@ challenge of finding an endpoint in the endless cycle of enhancement and
 new possibilities within the web ecosystem. I strive for better and more
 generic solutions without succumbing to perfectionism.
 
-## Key Learnings
-
-- Ship the first working solution; it's crucial to deliver rather than
-  solving hypothetical problems.
-
-- Embrace refactoring as requirements evolve.
-- Fear not deployments; automate processes to facilitate multiple daily
-  deployments without breaking functionality.
-
-- Copying code a few times before creating abstractions is acceptable.
-
 ## Additional Abilities
 
 Considering the end-user experience, I've delved into devOps and
