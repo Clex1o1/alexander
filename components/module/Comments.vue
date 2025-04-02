@@ -93,8 +93,9 @@ async function addComment() {
       </template>
       <template v-else>
         <div v-for="comment in post?.comments">
-          <MDC :value="comment.comment" class="content border-l-2 border-amber-400 p-4 soft-glow bg-amber-400/10" />
-          <p class="text-xs md:text-right mt-2">
+          <MDC :value="comment.comment"
+            class="comment content border-l-2 border-amber-400 p-4 soft-glow bg-amber-400/10" />
+          <p class="text-xs md:text-right mt-2 comment-author">
             {{ comment.name }} -
             {{
               new Date(comment.created_at).toLocaleTimeString("en-US", {
