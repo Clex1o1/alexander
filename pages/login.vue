@@ -15,7 +15,7 @@ useHead({
 defineOgImageComponent("custom");
 </script>
 <template>
-  <div class="login">
+  <main class="login">
     <ModuleLogin />
-  </div>
+  </main>
 </template>

@@ -6,7 +6,7 @@ defineOgImageComponent("custom");
 </script>
 
 <template>
-  <div class="about">
+  <article class="about">
     <ContentDoc class="content" />
-  </div>
+  </article>
 </template>

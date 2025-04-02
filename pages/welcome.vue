@@ -17,7 +17,7 @@ useHead({
 const user = useSupabaseUser();
 </script>
 <template>
-  <div class="welcome">
+  <main class="welcome">
     <h1>Welcome {{ user?.email }}</h1>
-  </div>
+  </main>
 </template>

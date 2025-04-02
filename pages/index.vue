@@ -21,12 +21,12 @@ defineOgImageComponent("custom");
 </script>
 <template>
   <div class="index grid place-content-center container">
-    <section class="flex flex-col items-center justify-center h-screen">
-      <h1 class="text-6xl md:text-9xl text-amber-400 headline">The Great</h1>
+    <section class="flex flex-col items-center justify-center h-screen" aria-labelledby="main-title">
+      <h1 id="main-title" class="text-6xl md:text-9xl text-amber-400 headline">The Great</h1>
       <!-- <transition name="intro" mode="out-in" appear>
         <div v-show="tmp" class="border-t-2 border-amber-400 w-full"></div>
       </transition> -->
-      <div class="border-t-2 border-amber-400 w-full glow"></div>
+      <div class="border-t-2 border-amber-400 w-full glow" role="presentation"></div>
       <!-- <div class="flex text-center flex-col flicker mt-8">
         <span class="rotate-90 inline-block loading">></span>
         <span class="rotate-90 inline-block -translate-y-2 loading">></span>
@@ -56,11 +56,9 @@ defineOgImageComponent("custom");
           </p>
         </article>
       </transition> -->
-      <div class="flex gap-4 mt-4">
-        <BaseButton to="/home" class="mt-8 text-center" autofocus
-          >press start</BaseButton
-        >
-      </div>
+      <nav class="flex gap-4 mt-4">
+        <BaseButton to="/home" class="mt-8 text-center" autofocus>press start</BaseButton>
+      </nav>
     </section>
   </div>
 </template>
@@ -69,10 +67,12 @@ defineOgImageComponent("custom");
 .intro-leave-active {
   transition: width 3s ease-out, opacity 0.5s ease-in-out;
 }
+
 .intro-enter-from,
 .intro-leave-to {
   width: 1%;
 }
+
 .intro-enter-to,
 .intro-leave-from {
   width: 100%;
@@ -82,46 +82,57 @@ defineOgImageComponent("custom");
 .loading:nth-child(1) {
   animation: dot1 1s steps(1, end) infinite;
 }
+
 .loading:nth-child(2) {
   animation: dot2 1s steps(1, end) infinite;
 }
+
 .loading:nth-child(3) {
   animation: dot3 1s steps(1, end) infinite;
 }
+
 @keyframes dot1 {
   from {
     opacity: 0;
   }
+
   20% {
     opacity: 100%;
     color: #fbbf24;
   }
+
   to {
     opacity: 100%;
     color: #fbbf24;
   }
 }
+
 @keyframes dot2 {
   from {
     opacity: 0;
   }
+
   40% {
     opacity: 100%;
     color: #fbbf24;
   }
+
   to {
     opacity: 100%;
     color: #fbbf24;
   }
 }
+
 @keyframes dot3 {
   from {
     opacity: 0;
   }
+
   60% {
     opacity: 100%;
     color: #fbbf24;
   }
+
   to {
     opacity: 100%;
     color: #fbbf24;

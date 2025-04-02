@@ -5,10 +5,12 @@ definePageMeta({
 defineOgImageComponent("custom");
 </script>
 <template>
-  <div class="home">
-    <ContentDoc class="content" />
-    <div class="mt-4 p-4">
-      <BaseButton to="/about" autofocus>next</BaseButton>
+  <article class="home">
+    <div class="content">
+      <ContentDoc />
     </div>
-  </div>
+    <nav class="navigation mt-4 p-4">
+      <BaseButton to="/about" autofocus>next</BaseButton>
+    </nav>
+  </article>
 </template>

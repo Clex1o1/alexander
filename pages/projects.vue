@@ -7,14 +7,16 @@ defineOgImageComponent("custom");
 
 <template>
   <article class="projects">
-    <section>
-      <p class="mt-4">
+    <section aria-labelledby="intro">
+      <p id="intro" class="mt-4">
         In addition to my permanent position, I engage in various
         projects, either independently or with a small team, depending on my
         mood.
       </p>
+    </section>
 
-      <h2 class="font-headline font-bold mt-4">FastTrack</h2>
+    <section aria-labelledby="fasttrack">
+      <h2 id="fasttrack" class="font-headline font-bold mt-4">FastTrack</h2>
       <p>
         App and Website. FastTrack is an application designed to easily and
         quickly initiate and generate Jira Worklogs with Tempo directly from the
@@ -23,8 +25,10 @@ defineOgImageComponent("custom");
         complexity of the app is intended to be kept relatively low to avoid
         replicating Jira.
       </p>
+    </section>
 
-      <h2 class="font-headline font-bold mt-4">Catch</h2>
+    <section aria-labelledby="catch">
+      <h2 id="catch" class="font-headline font-bold mt-4">Catch</h2>
       <p>
         App and Website. Catch is a game best played in a social setting.
         Participants join a lobby with their smartphones equipped with a camera.
@@ -33,8 +37,10 @@ defineOgImageComponent("custom");
         Points are awarded based on the closest resemblance. There are plans to
         expand the game with additional elements.
       </p>
+    </section>
 
-      <h2 class="font-headline font-bold mt-4">Missing Title CMS</h2>
+    <section aria-labelledby="cms">
+      <h2 id="cms" class="font-headline font-bold mt-4">Missing Title CMS</h2>
       <p>
         A CMS based on Nuxt3 and file-based architecture. The idea is to create
         a fast and straightforward CMS for small corporate, agency, or personal
