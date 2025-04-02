@@ -5,7 +5,7 @@ definePageMeta({
 defineOgImageComponent("custom");
 const route = useRoute();
 const { data } = await useAsyncData(route.path, () =>
-  queryCollection('blog').path(route.path).first()
+  queryCollection("blog").path(route.path).first()
 );
 
 function formatDate(date: string) {
@@ -19,45 +19,53 @@ function formatDate(date: string) {
 </script>
 
 <template>
-  <div class="blog">
-    <div v-if="data" class="blog-head flex justify-between content-baseline">
-      <p v-if="data?.date" class="text-xs">
+  <article class="blog">
+    <header v-if="data" class="blog-head flex justify-between content-baseline">
+      <time v-if="data?.date" class="text-xs" :datetime="data?.date">
         {{ formatDate(data?.date) }}
-      </p>
-      <div class="social-share flex gap-2 text-xs ml-auto">
+      </time>
+      <nav
+        class="social-share flex gap-2 text-xs ml-auto"
+        aria-label="Share article"
+      >
         <SocialShare network="bluesky" :label="false" />
         <SocialShare network="linkedin" :label="false" />
         <SocialShare network="reddit" :label="false" />
-      </div>
-    </div>
+      </nav>
+    </header>
+
     <ContentRenderer class="content mt-4" :value="data" v-if="data">
       <template #not-found>
         <p>The article you were looking for was not found.</p>
         <p>Take a look at the <nuxt-link to="/blog">Blog</nuxt-link></p>
       </template>
     </ContentRenderer>
-    <template v-if="data">
-      <div class="likes mt-8 flex items-center gap-4">
-        <h3 class="headline ml-auto">Like it?</h3>
-        <ModuleLike class=""></ModuleLike>
-      </div>
-      <h3 class="headline mt-8">One more thing</h3>
-      <p class="">
-        Your opinions matter! I welcome any feedback you may have. Let me know
-        your thoughts in the comments; I'm eager to hear from you!
-      </p>
+    <footer v-if="data">
+      <section
+        class="likes mt-8 flex items-center gap-4"
+        aria-label="Like this article"
+      >
+        <h2 class="headline ml-auto">Like it?</h2>
+        <ModuleLike></ModuleLike>
+      </section>
 
-      <div class="comments mt-8">
-        <div class="comments-list">
-          <ModuleComments :slug="route.path">
-            <template #header>
-              <h3 class="text-2xl mt-4 headline border-b-2 border-amber-400">
-                Comments
-              </h3>
-            </template>
-          </ModuleComments>
-        </div>
-      </div>
-    </template>
-  </div>
+      <section class="feedback mt-8" aria-label="Feedback">
+        <h2 class="headline">One more thing</h2>
+        <p>
+          Your opinions matter! I welcome any feedback you may have. Let me know
+          your thoughts in the comments; I'm eager to hear from you!
+        </p>
+      </section>
+
+      <section class="comments mt-8" aria-label="Comments">
+        <ModuleComments :slug="route.path">
+          <template #header>
+            <h2 class="text-2xl mt-4 headline border-b-2 border-amber-400">
+              Comments
+            </h2>
+          </template>
+        </ModuleComments>
+      </section>
+    </footer>
+  </article>
 </template>

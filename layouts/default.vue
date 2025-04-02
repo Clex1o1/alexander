@@ -29,7 +29,7 @@ const errorHappened = useState("errorHappened", () => false);
             }}
           </h1>
         </transition>
-        <section class="intro grid gap-4 md:grid-cols-4 pt-8">
+        <div class="intro grid gap-4 md:grid-cols-4 pt-8">
           <aside class="border-2 border-amber-400 p-4">
             <h2 class="font-headline font-bold">Menu</h2>
             <nav class="flex md:grid gap-y-1 gap-x-8 mt-4">
@@ -42,14 +42,16 @@ const errorHappened = useState("errorHappened", () => false);
             <ModuleLoading />
             <slot />
           </main>
-        </section>
+        </div>
       </div>
       <ClientOnly>
         <ModuleTerminal class="fixed bottom-0 inset-x-0"></ModuleTerminal>
       </ClientOnly>
-      <slot name="footer">
-        <ModuleFooter />
-      </slot>
+      <footer>
+        <slot name="footer">
+          <ModuleFooter />
+        </slot>
+      </footer>
     </div>
   </div>
 </template>
