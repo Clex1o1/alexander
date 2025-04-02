@@ -3,8 +3,6 @@ title: "Leadership as a Feeling: My Personal Philosophy"
 date: 2025-04-04T00:00:00.000Z
 ---
 
-# Leadership as a Feeling: My Personal Philosophy
-
 **Hello again! It’s been quite a while...**
 
 Let’s talk about something that’s been on my mind for years—and even more so over the past few months: **Leadership.**
