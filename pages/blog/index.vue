@@ -13,13 +13,13 @@ const blog = await queryCollectionNavigation("blog").then((pages) => {
 </script>
 
 <template>
-  <div class="blog-list">
-    <nav>
+  <article class="blog-list">
+    <nav aria-label="Blog posts">
       <ul>
         <li v-for="blogEntry in blog" :key="blogEntry.stem">
           <NuxtLink :to="blogEntry.path">{{ blogEntry.title }}</NuxtLink>
         </li>
       </ul>
     </nav>
-  </div>
+  </article>
 </template>

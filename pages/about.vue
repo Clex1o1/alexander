@@ -3,14 +3,14 @@ definePageMeta({
   title: "About",
 });
 defineOgImageComponent("custom");
-const route = useRoute()
+const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection('blog').path(route.path).first()
-})
+  return queryCollection("blog").path(route.path).first();
+});
 </script>
 
 <template>
-  <div class="about">
+  <article class="about">
     <ContentRenderer class="content" :value="page" v-if="page" />
-  </div>
+  </article>
 </template>
