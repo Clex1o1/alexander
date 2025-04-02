@@ -21,4 +21,4 @@ Just copy the path and create a new post-entry in Supabase.
 - [ ] Fix terminal input on mobile
 - [ ] Fix runtime errors
 - [ ] Fix copy button on code blocks
-- [ ] Fix content url abd redirect 
+- [ ] Fix content url abd redirect
