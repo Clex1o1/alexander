@@ -582,6 +582,13 @@
   }
 }
 
+.comment.content {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
 /* Custom Component Sytles */
 .is-typed span.underscore {
   display: inline-flex;
