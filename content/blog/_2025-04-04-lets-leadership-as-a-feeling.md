@@ -22,7 +22,7 @@ The topic of leadership keeps popping up in my bubble lately. Maybe because I’
 
 ---
 
-### My Story
+## My Story
 
 Back in 2017, I had the chance to start leading a small team—just four people, with interns joining now and then. I was new to leadership, so I started reading everything I could find about teams, leadership, and organizations. Some books were incredibly valuable. Others had conflicting views. That’s okay—I do too.
 
@@ -57,7 +57,7 @@ That may sound radical. But in a great team, these practices become a shared act
 
 ---
 
-### What Came Next
+## What Came Next
 
 By 2024, I'd developed most of my leadership philosophy. Despite continuous efforts to improve the situation for myself and my team, I was facing challenges beyond my control—things I couldn't influence or change, despite my best efforts.
 
@@ -73,7 +73,7 @@ Here are a few of my key principles—things that aren't always found in managem
 
 ---
 
-### Everyone Has Everyone's Back
+## Everyone Has Everyone's Back
 
 The most powerful (and simple) rule: teammates support each other.
 
@@ -94,7 +94,7 @@ Transparency matters—not just across hierarchies, but **within the team.**
 
 ---
 
-### Build Space For Human Moments
+## Build Space For Human Moments
 
 People perform better when they’re not carrying emotional weight.
 
@@ -113,7 +113,7 @@ That helped to keep us connected. And connection leads to better collaboration.
 
 ---
 
-### Let’s Talk About Remote Work
+## Let’s Talk About Remote Work
 
 Remote teams can absolutely work. But it takes effort.
 
@@ -135,7 +135,7 @@ Flow state[^flow-state] is ideal—but it’s not the everyday reality. It’s s
 
 ---
 
-### Lead By Example
+## Lead By Example
 
 No matter how flat your hierarchy is, people will notice what management does. If you talk about culture but don't genuinely embody it yourself, people won't fully buy in. Be a role model and lead by example.
 
@@ -162,7 +162,7 @@ Also worth noting: in my opinion, leadership and management are not the same. Th
 
 ---
 
-### Get Your Hands Dirty
+## Get Your Hands Dirty
 
 One of the most powerful ways to build trust is to stay close to the work.
 
@@ -179,7 +179,7 @@ It makes your feedback, questions, and support feel genuine—because you're not
 
 ---
 
-### Plan
+## Plan
 
 Plan together.
 
@@ -200,7 +200,7 @@ Are conflicts good? I’m not sure. But respectful disagreement? That’s where 
 
 ---
 
-### Agile Teams & Bounded Freedom
+## Agile Teams & Bounded Freedom
 
 Agile isn’t new. But many teams still don’t fully commit to it.
 
@@ -235,7 +235,7 @@ Bounded freedom means: pick from the pool, but pick what fits **you** right now.
 
 ---
 
-### Still Learning – Things I'm Working On
+## Still Learning – Things I'm Working On
 
 One thing I’ve learned about leadership is that you never stop learning—and you never stop working on yourself.
 
