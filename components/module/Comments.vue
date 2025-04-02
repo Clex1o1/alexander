@@ -77,13 +77,17 @@ async function addComment() {
     </slot>
     <div v-if="!user">
       <p>Login to add a comment</p>
-      <BaseButton :to="`/login?referrer=${route.fullPath}`" class="mt-4">Login</BaseButton>
+      <BaseButton :to="`/login?referrer=${route.fullPath}`" class="mt-4"
+        >Login</BaseButton
+      >
     </div>
     <form v-else @submit.prevent="addComment" class="">
       <client-only>
         <BaseInput v-model="name" placeholder="Name" required />
         <BaseEditor class="content mt-4" v-model="comment" />
-        <BaseButton type="submit" :loading="loading" class="mt-4">Add Comment</BaseButton>
+        <BaseButton type="submit" :loading="loading" class="mt-4"
+          >Add Comment</BaseButton
+        >
         <p v-if="writeError" class="text-red-600">writeError</p>
       </client-only>
     </form>
@@ -93,8 +97,10 @@ async function addComment() {
       </template>
       <template v-else>
         <div v-for="comment in post?.comments">
-          <MDC :value="comment.comment"
-            class="comment content border-l-2 border-amber-400 p-4 soft-glow bg-amber-400/10" />
+          <MDC
+            :value="comment.comment"
+            class="comment content border-l-2 border-amber-400 p-4 soft-glow bg-amber-400/10"
+          />
           <p class="text-xs md:text-right mt-2 comment-author">
             {{ comment.name }} -
             {{
