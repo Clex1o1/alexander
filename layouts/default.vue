@@ -22,42 +22,35 @@ const errorHappened = useState("errorHappened", () => false);
       <slot name="header"></slot>
       <div class="container mx-auto pt-8">
         <transition name="zapp-out" mode="out-in">
-          <h1
-            class="headline text-4xl text-wrap"
-            :key="router.currentRoute.value.path"
-          >
+          <h1 class="headline text-4xl text-wrap" :key="router.currentRoute.value.path">
             {{
               data?.title || router.currentRoute.value.meta.title || "&nbsp;"
             }}
           </h1>
         </transition>
-        <section class="intro grid gap-4 md:grid-cols-4 pt-8">
+        <div class="intro grid gap-4 md:grid-cols-4 pt-8">
           <aside class="border-2 border-amber-400 p-4">
             <h2 class="font-headline font-bold">Menu</h2>
             <nav class="flex md:grid gap-y-1 gap-x-8 mt-4">
-              <NuxtLink class="nav-item" to="/home"
-                ><span class="underline">Home</span></NuxtLink
-              >
-              <NuxtLink class="nav-item" to="/blog"
-                ><span class="underline">Blog</span></NuxtLink
-              >
-              <NuxtLink class="nav-item" to="/about"
-                ><span class="underline">About</span></NuxtLink
-              >
+              <NuxtLink class="nav-item" to="/home"><span class="underline">Home</span></NuxtLink>
+              <NuxtLink class="nav-item" to="/blog"><span class="underline">Blog</span></NuxtLink>
+              <NuxtLink class="nav-item" to="/about"><span class="underline">About</span></NuxtLink>
             </nav>
           </aside>
           <main class="border-2 border-amber-400 p-4 md:col-span-3 min-w-0">
             <ModuleLoading />
             <slot />
           </main>
-        </section>
+        </div>
       </div>
       <ClientOnly>
         <ModuleTerminal class="fixed bottom-0 inset-x-0"></ModuleTerminal>
       </ClientOnly>
-      <slot name="footer">
-        <ModuleFooter />
-      </slot>
+      <footer>
+        <slot name="footer">
+          <ModuleFooter />
+        </slot>
+      </footer>
     </div>
   </div>
 </template>
