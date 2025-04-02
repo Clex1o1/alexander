@@ -555,6 +555,11 @@
     box-shadow: none;
     text-shadow: none;
   }
+
+  pre code {
+    @apply bg-transparent p-0 shadow-none;
+  }
+  
   .inline-left {
     @apply lg:float-left lg:w-6/12 lg:p-4 lg:mt-0;
   }
