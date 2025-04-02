@@ -17,6 +17,6 @@ languages, frameworks, and people I will mention. That fits best!
 
 ## Sooo... Back to <s>the Future</s> basics
 
-Hi! I'm Alexander Classen, a passionate full-stack developer from Germany,
+Hi! I'm Alexander, a passionate full-stack developer from Germany,
 and this is my journey. The journey starts now. Fasten your seat belts and
 enjoy the ride!

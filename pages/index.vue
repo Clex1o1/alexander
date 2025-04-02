@@ -13,7 +13,7 @@ useHead({
     {
       name: "description",
       content:
-        "Embark on the tech journey with Alexander Classen, a passionate full-stack developer from Germany. Explore the world of coding, frameworks, and tech adventures through the lens of 'The Great.' Join the ride at the-great.dev and fasten your seat belts for a unique exploration of the development landscape.",
+        "Embark on the tech journey with Alexander, a passionate full-stack developer from Germany. Explore the world of coding, frameworks, and tech adventures through the lens of 'The Great.' Join the ride at the-great.dev and fasten your seat belts for a unique exploration of the development landscape.",
     },
   ],
 });
