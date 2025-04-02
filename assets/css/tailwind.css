@@ -181,6 +181,9 @@
   .glow {
     box-shadow: var(--box-shadow);
   }
+  .soft-glow {
+    box-shadow: rgba(251, 191, 36, 0.1) 0px 0px 8px;
+  }
 
   .bg-screen {
     /* background gradiant looks like a old tube screen */
@@ -508,7 +511,8 @@
   }
 
   code {
-    @apply font-mono text-gray-300 text-sm;
+    @apply font-mono text-gray-300 text-sm bg-amber-400/10 p-1 soft-glow;
+    
   }
   .inline-left {
     @apply lg:float-left lg:w-6/12 lg:p-4 lg:mt-0;
@@ -521,7 +525,7 @@
   }
   
   blockquote {
-    @apply border-l-2 border-amber-400 pl-4 py-4 mt-4 bg-amber-400/10;
+    @apply border-l-2 border-amber-400 pl-4 py-4 mt-4 bg-amber-400/10 soft-glow;
   }
 
    /* clear fix hack */
