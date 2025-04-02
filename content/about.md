@@ -4,7 +4,7 @@ title: About
 
 # A quick summary about me.
 
-Maybe you already read: my name is Alexander Classen and I'm a
+Maybe you already read: my name is Alexander and I'm a
 passionate fullstack developer from Germany.
 
 My focus constantly shifts depending on the demands of the team or

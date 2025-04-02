@@ -20,3 +20,4 @@ Just copy the path and create a new post-entry in Supabase.
 - [ ] Add a script to generate the posts in Supabase
 - [ ] Fix terminal input on mobile
 - [ ] Fix runtime errors
+- [ ] Fix copy button on code blocks

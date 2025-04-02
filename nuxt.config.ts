@@ -59,7 +59,7 @@ export default defineNuxtConfig({
           favicon: "https://www.the-great.dev/favicon.ico",
           image: "https://www.the-great.dev/__og-image__/image/og.png",
           description:
-            "Hi! I'm Alexander Classen, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
+            "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
         },
       },
       item: {
