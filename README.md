@@ -1,79 +1,22 @@
-# Nuxt 3 Minimal Starter
+# the-great.dev blog
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is the blog for the-great.dev. It is built with [Nuxt.js](https://nuxt.com/) and [Tailwind CSS](https://tailwindcss.com/).
 
-## Setup
-
-Make sure to install the dependencies:
+## Development
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Supabase
 
-Build the application for production:
+**Every new post needs to be added to Supabase**
 
-```bash
-# npm
-npm run build
+Just copy the path and create a new post-entry in Supabase.
 
-# pnpm
-pnpm run build
+## TODOs
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## TODO
-
-- [ ] Runtime error handling
+- [ ] Add a script to generate the posts in Supabase
+- [ ] Fix terminal input on mobile
+- [ ] Fix runtime errors
