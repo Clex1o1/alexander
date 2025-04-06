@@ -118,4 +118,12 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+  routeRules: {
+    "/blog/2025-04-04-lets-leadership-as-a-feeling": {
+      redirect: {
+        to: "/blog/2025-04-04-leadership-as-a-feeling",
+        statusCode: 301,
+      },
+    },
+  },
 });
