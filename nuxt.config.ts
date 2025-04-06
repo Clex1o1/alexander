@@ -136,4 +136,12 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2025-03-23",
+  routeRules: {
+    "/blog/2025-04-04-lets-leadership-as-a-feeling": {
+      redirect: {
+        to: "/blog/2025-04-04-leadership-as-a-feeling",
+        statusCode: 301,
+      },
+    },
+  },
 });
