@@ -5,10 +5,10 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/seo",
     "@nuxt/content",
     "@nuxt/icon",
     "@vueuse/nuxt",
-    "nuxt-og-image",
     "nuxt-gtag",
     "@nuxt/image",
     "nuxt-icons",
@@ -107,6 +107,7 @@ export default defineNuxtConfig({
   site: {
     // production URL
     url: "https://www.the-great.dev",
+    name: "Alexander - The Great",
   },
 
   ogImage: {
@@ -133,8 +134,6 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
-
-  compatibilityDate: "2025-03-23",
   routeRules: {
     "/blog/2025-04-04-lets-leadership-as-a-feeling": {
       redirect: {
@@ -143,4 +142,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2025-04-06",
 });
