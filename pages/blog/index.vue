@@ -7,17 +7,19 @@ useHead({
 });
 defineOgImageComponent("custom");
 
-const blog = await queryCollectionNavigation("blog").then((pages) => {
-  return pages.find((page) => page.path === "/blog")?.children;
-});
+const blog = await queryCollectionNavigation("blog", ["date"])
+  .order("date", "DESC")
+  .then((pages) => {
+    return pages.flatMap((page) => page.children);
+  });
 </script>
 
 <template>
   <article class="blog-list">
     <nav aria-label="Blog posts">
       <ul>
-        <li v-for="blogEntry in blog" :key="blogEntry.stem">
-          <NuxtLink :to="blogEntry.path">{{ blogEntry.title }}</NuxtLink>
+        <li v-for="blogEntry in blog" :key="blogEntry?.stem">
+          <NuxtLink :to="blogEntry?.path">{{ blogEntry?.title }}</NuxtLink>
         </li>
       </ul>
     </nav>

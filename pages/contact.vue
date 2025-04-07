@@ -6,7 +6,7 @@ definePageMeta({
 defineOgImageComponent("custom");
 const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection("blog").path(route.path).first();
+  return queryCollection("pages").path(route.path).first();
 });
 const openTerminal = useState("terminal-open");
 const openTerminalCommand = useState("terminal-open-command");

@@ -46,41 +46,32 @@ export default defineNuxtConfig({
   },
 
   feedme: {
-    content: {
-      feed: {
-        defaults: {
-          author: {
-            email: "alexander@the-great.dev",
-            name: "Alexander Classen",
-          },
-          title: "the-graet.dev",
-          link: "https://www.the-great.dev",
-          favicon: "https://www.the-great.dev/favicon.ico",
-          image: "https://www.the-great.dev/__og-image__/image/og.png",
-          description:
-            "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
-        },
-      },
-      item: {
-        templateRoots: ["content", "blog"],
-
-        defaults: {
-          author: [
-            {
-              email: "alexander@the-great.dev",
-              name: "Alexander Classen",
-            },
-          ],
-        },
-        mapping: [
-          ["link", "_path"],
-          ["date", "date", (value) => (value ? new Date(value) : value)],
-          ["image", "https://www.the-great.dev/__og-image__/image/og.png"],
-        ],
-      },
+    feeds: {
+      '/feed.xml': {}, // Simple RSS feed
+      '/feed.atom': {}, // Simple Atom feed
     },
+    defaults: {
+      rss: {
+        title: "the-great.dev",
+        link: "https://www.the-great.dev",
+        favicon: "https://www.the-great.dev/favicon.ico",
+        image: "https://www.the-great.dev/__og-image__/image/og.png",
+        description: "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey.",
+        author: {
+          email: "alexander@the-great.dev",
+          name: "Alexander Classen"
+        }
+      },
+      content: {
+        collections: ['blog'], // This matches your content.config.ts collection
+        mapping: [
+          ['link', '_path'],
+          ['title', 'title'],
+          ['date', 'date']
+        ]
+      }
+    }
   },
-
   app: {
     head: {
       // meta: [{ name: "robots", content: "noindex, nofollow" }],
