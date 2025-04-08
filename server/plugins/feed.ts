@@ -33,13 +33,17 @@ export default defineNitroPlugin((nitroApp) => {
         const posts = await queryCollection(event, 'blog').all()
 
         // Add posts to feed
-        posts.forEach((post: any) => {
+        for (const post of posts) {
+            // For now, we'll use the description as content since it's already in plain text
+            // This is a temporary solution until we can properly transform the MDC content
+            const content = post.description || ''
+
             feed.addItem({
                 title: post.title || 'Untitled',
                 id: `https://www.the-great.dev${post.path}`,
                 link: `https://www.the-great.dev${post.path}`,
-                description: post.description || post.excerpt || '',
-                content: post.body || '',
+                description: post.description || '',
+                content: content,
                 date: post.date ? new Date(post.date) : new Date(),
                 author: [{
                     name: "Alexander Classen",
@@ -55,6 +59,6 @@ export default defineNitroPlugin((nitroApp) => {
                     type: 'image/jpeg'
                 } : undefined
             })
-        })
+        }
     })
 })

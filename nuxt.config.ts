@@ -50,6 +50,7 @@ export default defineNuxtConfig({
         path: '/feed.xml',
         type: 'rss2',
         cacheTime: 60 * 15 // 15 minutes
+
       },
       {
         path: '/feed.atom',
