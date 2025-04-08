@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     "@stefanobartoletti/nuxt-social-share",
     "@nuxtjs/mdc",
     "nuxt-tiptap-editor",
-    "nuxt-feedme",
+    "nuxt-module-feed",
   ],
 
   runtimeConfig: {
@@ -44,33 +44,24 @@ export default defineNuxtConfig({
     global: true,
     dirs: ["~/components"],
   },
-
-  feedme: {
-    feeds: {
-      '/feed.xml': {}, // Simple RSS feed
-      '/feed.atom': {}, // Simple Atom feed
-    },
-    defaults: {
-      rss: {
-        title: "the-great.dev",
-        link: "https://www.the-great.dev",
-        favicon: "https://www.the-great.dev/favicon.ico",
-        image: "https://www.the-great.dev/__og-image__/image/og.png",
-        description: "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey.",
-        author: {
-          email: "alexander@the-great.dev",
-          name: "Alexander Classen"
-        }
+  feed: {
+    sources: [
+      {
+        path: '/feed.xml',
+        type: 'rss2',
+        cacheTime: 60 * 15 // 15 minutes
       },
-      content: {
-        collections: ['blog'], // This matches your content.config.ts collection
-        mapping: [
-          ['link', '_path'],
-          ['title', 'title'],
-          ['date', 'date']
-        ]
+      {
+        path: '/feed.atom',
+        type: 'atom1',
+        cacheTime: 60 * 15
+      },
+      {
+        path: '/feed.json',
+        type: 'json1',
+        cacheTime: 60 * 15
       }
-    }
+    ]
   },
   app: {
     head: {
