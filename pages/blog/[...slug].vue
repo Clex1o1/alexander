@@ -4,8 +4,8 @@ definePageMeta({
 });
 defineOgImageComponent("custom");
 const route = useRoute();
-const { data, pending, status } = await useAsyncData(route.path, () =>
-  queryContent(route.fullPath).findOne()
+const { data } = await useAsyncData(route.path, () =>
+  queryCollection("blog").path(route.path).first()
 );
 
 function formatDate(date: string) {
@@ -24,22 +24,27 @@ function formatDate(date: string) {
       <time v-if="data?.date" class="text-xs" :datetime="data?.date">
         {{ formatDate(data?.date) }}
       </time>
-      <nav class="social-share flex gap-2 text-xs ml-auto" aria-label="Share article">
+      <nav
+        class="social-share flex gap-2 text-xs ml-auto"
+        aria-label="Share article"
+      >
         <SocialShare network="bluesky" :label="false" />
         <SocialShare network="linkedin" :label="false" />
         <SocialShare network="reddit" :label="false" />
       </nav>
     </header>
 
-    <ContentDoc class="content mt-4" ref="doc">
+    <ContentRenderer class="content mt-4" :value="data" v-if="data">
       <template #not-found>
         <p>The article you were looking for was not found.</p>
         <p>Take a look at the <nuxt-link to="/blog">Blog</nuxt-link></p>
       </template>
-    </ContentDoc>
-
+    </ContentRenderer>
     <footer v-if="data">
-      <section class="likes mt-8 flex items-center gap-4" aria-label="Like this article">
+      <section
+        class="likes mt-8 flex items-center gap-4"
+        aria-label="Like this article"
+      >
         <h2 class="headline ml-auto">Like it?</h2>
         <ModuleLike></ModuleLike>
       </section>

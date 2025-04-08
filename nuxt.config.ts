@@ -2,74 +2,67 @@
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NODE_ENV === "development" },
   debug: process.env.NODE_ENV === "development",
+
   modules: [
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/seo",
     "@nuxt/content",
-    "@nuxthq/studio",
-    "nuxt-icon",
+    "@nuxt/icon",
     "@vueuse/nuxt",
-    "nuxt-og-image",
     "nuxt-gtag",
     "@nuxt/image",
-    "nuxt-feedme",
     "nuxt-icons",
     "@nuxtjs/supabase",
     "@stefanobartoletti/nuxt-social-share",
     "@nuxtjs/mdc",
     "nuxt-tiptap-editor",
+    "nuxt-module-feed",
   ],
+
   runtimeConfig: {
     // private
     public: {
       // public
     },
   },
+
   tiptap: {
     prefix: "Tiptap", //prefix for Tiptap imports, composables not included
   },
+
   content: {
-    highlight: {
-      theme: "github-dark",
+    build: {
+      markdown: {
+        highlight: {
+          theme: "github-dark",
+        },
+      },
     },
   },
+
   components: {
     global: true,
     dirs: ["~/components"],
   },
-  feedme: {
-    content: {
-      feed: {
-        defaults: {
-          author: {
-            email: "alexander@the-great.dev",
-            name: "Alexander Classen",
-          },
-          title: "the-graet.dev",
-          link: "https://www.the-great.dev",
-          favicon: "https://www.the-great.dev/favicon.ico",
-          image: "https://www.the-great.dev/__og-image__/image/og.png",
-          description:
-            "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey. The journey starts now. Fasten your seat belts and enjoy the ride!",
-        },
-      },
-      item: {
-        templateRoots: ["content", "blog"],
+  feed: {
+    sources: [
+      {
+        path: '/feed.xml',
+        type: 'rss2',
+        cacheTime: 60 * 15 // 15 minutes
 
-        defaults: {
-          author: [
-            {
-              email: "alexander@the-great.dev",
-              name: "Alexander Classen",
-            },
-          ],
-        },
-        mapping: [
-          ["link", "_path"],
-          ["date", "date"],
-          ["image", "https://www.the-great.dev/__og-image__/image/og.png"],
-        ],
       },
-    },
+      {
+        path: '/feed.atom',
+        type: 'atom1',
+        cacheTime: 60 * 15
+      },
+      {
+        path: '/feed.json',
+        type: 'json1',
+        cacheTime: 60 * 15
+      }
+    ]
   },
   app: {
     head: {
@@ -84,6 +77,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "zapp-out", mode: "out-in" },
     layoutTransition: { name: "zapp-out", mode: "out-in" },
   },
+
   vite: {
     vue: {
       script: {
@@ -92,10 +86,13 @@ export default defineNuxtConfig({
       },
     },
   },
+
   site: {
     // production URL
     url: "https://www.the-great.dev",
+    name: "Alexander - The Great",
   },
+
   ogImage: {
     fonts: [
       {
@@ -112,9 +109,11 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   gtag: {
     enabled: false,
   },
+
   supabase: {
     redirect: false,
   },
@@ -126,4 +125,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2025-04-06",
 });

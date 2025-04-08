@@ -16,13 +16,28 @@
       </nav>
       <div class="text-right grid gap-1">
         <div class="flex gap-3 justify-end text-lg">
-          <NuxtLink to="https://github.com/Clex1o1" external target="_blank" title="GitHub">
+          <NuxtLink
+            to="https://github.com/Clex1o1"
+            external
+            target="_blank"
+            title="GitHub"
+          >
             <NuxtIcon name="github" />
           </NuxtLink>
-          <NuxtLink to="https://bsky.app/profile/the-great.dev" external target="_blank" title="BlueSky">
+          <NuxtLink
+            to="https://bsky.app/profile/the-great.dev"
+            external
+            target="_blank"
+            title="BlueSky"
+          >
             <NuxtIcon name="bluesky" />
           </NuxtLink>
-          <NuxtLink to="https://de.linkedin.com/in/clex1o1" external target="_blank" title="LinkedIn">
+          <NuxtLink
+            to="https://de.linkedin.com/in/clex1o1"
+            external
+            target="_blank"
+            title="LinkedIn"
+          >
             <NuxtIcon name="linkedin" />
           </NuxtLink>
         </div>

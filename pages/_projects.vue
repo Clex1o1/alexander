@@ -9,9 +9,8 @@ defineOgImageComponent("custom");
   <article class="projects">
     <section aria-labelledby="intro">
       <p id="intro" class="mt-4">
-        In addition to my permanent position, I engage in various
-        projects, either independently or with a small team, depending on my
-        mood.
+        In addition to my permanent position, I engage in various projects,
+        either independently or with a small team, depending on my mood.
       </p>
     </section>
 

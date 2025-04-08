@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { NavItem } from "@nuxt/content/types";
+import type { ContentNavigationItem } from "@nuxt/content";
+
 /**
  * A Terminal to navigate through my website
  * Commands to implement:
@@ -74,7 +75,11 @@ watchEffect(() => {
 // fetch navigation items based on path
 const { data: navigation } = await useAsyncData(
   "navigation-terminal",
-  () => fetchContentNavigation(),
+  () =>
+    Promise.all([
+      queryCollectionNavigation("blog"),
+      queryCollectionNavigation("pages"),
+    ]).then(([blog, pages]) => [...blog, ...pages]),
   { watch: [path] }
 );
 // map the sites from the navigation items to get the paths and add site without file
@@ -85,10 +90,10 @@ const sites = computed(() => {
   return mapPaths(navigation.value);
 });
 
-function mapPaths(items: NavItem[]): string[] {
+function mapPaths(items: ContentNavigationItem[]): string[] {
   return items.reduce((acc, item) => {
-    if (item._path) {
-      acc.push(item._path);
+    if (item.path) {
+      acc.push(item.path);
     }
     if (item.children) {
       acc.push(...mapPaths(item.children));

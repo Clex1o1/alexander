@@ -260,7 +260,9 @@
 .zapp-out-leave-active,
 .zapp-out-enter-active {
   position: relative;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 .zapp-out:after {
@@ -303,7 +305,9 @@
 .fly-leave-active,
 .fly-enter-active {
   overflow: hidden;
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
 }
 .fly-enter-from {
   opacity: 0;
@@ -483,7 +487,8 @@
 /* Text Formatting */
 .content {
   h1,
-  h2, h3 {
+  h2,
+  h3 {
     @apply headline font-headline font-bold mt-4 clear-both;
     a {
       @apply no-underline;
@@ -507,18 +512,17 @@
   }
 
   img {
-    @apply mx-auto mt-8 w-full h-auto; 
+    @apply mx-auto mt-8 w-full h-auto;
   }
 
   code {
     @apply font-mono text-gray-300 text-sm bg-amber-400/10 p-1 soft-glow;
-    
   }
 
   pre code {
     @apply bg-transparent p-0 shadow-none;
   }
-  
+
   .inline-left {
     @apply lg:float-left lg:w-6/12 lg:p-4 lg:mt-0;
   }
@@ -528,20 +532,20 @@
   .inline-full {
     @apply lg:w-8/12;
   }
-  
+
   blockquote {
     @apply border-l-2 border-amber-400 pl-4 py-4 mt-4 bg-amber-400/10 soft-glow;
   }
 
-   /* clear fix hack */
-  .inline-left ~ p:has(+hr):after,
-  .inline-right ~ p:has(+hr):after {
+  /* clear fix hack */
+  .inline-left ~ p:has(+ hr):after,
+  .inline-right ~ p:has(+ hr):after {
     content: "";
     @apply clear-both block;
   }
 
   hr {
-    @apply my-8 border-amber-400 border-2 block clear-both block;
+    @apply my-8 border-amber-400 border-2 block clear-both;
     box-shadow: var(--box-shadow);
   }
 }
@@ -550,6 +554,10 @@
   * {
     box-shadow: none;
     text-shadow: none;
+  }
+
+  pre code {
+    @apply bg-transparent p-0 shadow-none;
   }
 }
 
