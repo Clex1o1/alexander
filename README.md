@@ -22,3 +22,5 @@ Just copy the path and create a new post-entry in Supabase.
 - [ ] Fix runtime errors
 - [ ] Fix copy button on code blocks
 - [ ] Fix content url abd redirect
+- [ ] Fix Image (alt + LCP)
+- [ ] Fix mete description

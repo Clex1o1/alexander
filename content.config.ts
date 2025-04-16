@@ -1,5 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+import { asOgImageCollection } from 'nuxt-og-image/content'
 
 export default defineContentConfig({
   collections: {
@@ -24,5 +25,11 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
     })),
+    ogImage: defineCollection(
+      asOgImageCollection({
+        type: 'page',
+        source: '**/*.md',
+      }),
+    ),
   }
 })

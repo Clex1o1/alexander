@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({ title: "Blog" });
-defineOgImageComponent("custom");
+
 const route = useRoute();
 const { data } = await useAsyncData(route.path, () =>
   queryCollection("blog").path(route.path).first()
@@ -17,10 +17,17 @@ function formatDate(date: string) {
 if (!data.value) {
   throw createError({ statusCode: 404, statusMessage: "Not Found" });
 }
+
+defineOgImageComponent("custom");
+useHead({
+  title: data.value?.seo.title,
+  meta: [{ name: "description", content: data.value?.seo.description }],
+});
 </script>
 
 <template>
   <article class="blog">
+    {{ data?.seo }}
     <header v-if="data" class="blog-head flex justify-between content-baseline">
       <time v-if="data?.date" class="text-xs" :datetime="data?.date">
         {{ formatDate(data?.date) }}

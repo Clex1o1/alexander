@@ -1,10 +1,7 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: "hero",
-  layoutTransition: {
-    name: "fly",
-    mode: "out-in",
-  },
+  layoutTransition: { name: "fly", mode: "out-in" },
   title: "Alexander",
 });
 useHead({
@@ -13,7 +10,7 @@ useHead({
     {
       name: "description",
       content:
-        "Embark on the tech journey with Alexander, a passionate full-stack developer from Germany. Explore the world of coding, frameworks, and tech adventures through the lens of 'The Great.' Join the ride at the-great.dev and fasten your seat belts for a unique exploration of the development landscape.",
+        "Embark on the tech journey with Alexander, a passionate full-stack engineer from Germany. Explore the world of coding, frameworks, and tech adventures through the lens of 'The Great.' Join the ride at the-great.dev and fasten your seat belts for a unique exploration of the development landscape.",
     },
   ],
 });
@@ -21,12 +18,20 @@ defineOgImageComponent("custom");
 </script>
 <template>
   <div class="index grid place-content-center container">
-    <section class="flex flex-col items-center justify-center h-screen" aria-labelledby="main-title">
-      <h1 id="main-title" class="text-6xl md:text-9xl text-amber-400 headline">The Great</h1>
+    <section
+      class="flex flex-col items-center justify-center h-screen"
+      aria-labelledby="main-title"
+    >
+      <h1 id="main-title" class="text-6xl md:text-9xl text-amber-400 headline">
+        The Great
+      </h1>
       <!-- <transition name="intro" mode="out-in" appear>
         <div v-show="tmp" class="border-t-2 border-amber-400 w-full"></div>
       </transition> -->
-      <div class="border-t-2 border-amber-400 w-full glow" role="presentation"></div>
+      <div
+        class="border-t-2 border-amber-400 w-full glow"
+        role="presentation"
+      ></div>
       <!-- <div class="flex text-center flex-col flicker mt-8">
         <span class="rotate-90 inline-block loading">></span>
         <span class="rotate-90 inline-block -translate-y-2 loading">></span>
@@ -57,7 +62,9 @@ defineOgImageComponent("custom");
         </article>
       </transition> -->
       <nav class="flex gap-4 mt-4">
-        <BaseButton to="/home" class="mt-8 text-center" autofocus>press start</BaseButton>
+        <BaseButton to="/home" class="mt-8 text-center" autofocus
+          >press start</BaseButton
+        >
       </nav>
     </section>
   </div>
@@ -65,7 +72,9 @@ defineOgImageComponent("custom");
 <style scoped>
 .intro-enter-active,
 .intro-leave-active {
-  transition: width 3s ease-out, opacity 0.5s ease-in-out;
+  transition:
+    width 3s ease-out,
+    opacity 0.5s ease-in-out;
 }
 
 .intro-enter-from,

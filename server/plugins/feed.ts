@@ -9,7 +9,7 @@ export default defineNitroPlugin((nitroApp) => {
             id: "https://www.the-great.dev",
             title: "the-great.dev",
             link: "https://www.the-great.dev",
-            description: "Hi! I'm Alexander, a passionate full-stack developer from Germany, and this is my journey.",
+            description: "Hi! I'm Alexander, a passionate full-stack engineer from Germany, and this is my journey.",
             copyright: "© 2025 Alexander Classen",
             image: "https://www.the-great.dev/__og-image__/image/og.png",
             favicon: "https://www.the-great.dev/favicon.ico",

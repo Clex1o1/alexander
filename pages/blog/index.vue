@@ -1,10 +1,6 @@
 <script lang="ts" setup>
-definePageMeta({
-  title: "Blog",
-});
-useHead({
-  title: "Blog",
-});
+definePageMeta({ title: "Blog" });
+useHead({ title: "Blog" });
 defineOgImageComponent("custom");
 
 const blog = await queryCollectionNavigation("blog", ["date"])
@@ -12,6 +8,16 @@ const blog = await queryCollectionNavigation("blog", ["date"])
   .then((pages) => {
     return pages.flatMap((page) => page.children);
   });
+
+useHead({
+  title: "Blog",
+  meta: [
+    {
+      name: "description",
+      content: "Where thoughts go to become pixels - my latest blog adventures",
+    },
+  ],
+});
 </script>
 
 <template>
