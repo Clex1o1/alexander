@@ -27,7 +27,6 @@ useHead({
 
 <template>
   <article class="blog">
-    {{ data?.seo }}
     <header v-if="data" class="blog-head flex justify-between content-baseline">
       <time v-if="data?.date" class="text-xs" :datetime="data?.date">
         {{ formatDate(data?.date) }}
