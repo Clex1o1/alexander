@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-definePageMeta({
-  title: "Blog",
-});
+definePageMeta({ title: "Blog" });
 defineOgImageComponent("custom");
 const route = useRoute();
 const { data } = await useAsyncData(route.path, () =>
@@ -15,6 +13,9 @@ function formatDate(date: string) {
     month: "long",
     day: "numeric",
   });
+}
+if (!data.value) {
+  throw createError({ statusCode: 404, statusMessage: "Not Found" });
 }
 </script>
 
