@@ -357,6 +357,8 @@ function scrollToPastCommands(direction: "up" | "down") {
   >
     <button
       class="absolute rounded-t -translate-y-full right-4 bg-slate-950 px-4 py-4"
+      aria-label="Toggle terminal"
+      title="Toggle terminal"
       @click="
         () => {
           open = !open;
