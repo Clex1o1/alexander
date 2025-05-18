@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "nuxt-tiptap-editor",
     "nuxt-module-feed",
+    "@nuxtjs/partytown",
   ],
 
   runtimeConfig: {

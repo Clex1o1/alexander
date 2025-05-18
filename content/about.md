@@ -5,7 +5,7 @@ title: About
 # A quick summary about me.
 
 Maybe you already read: my name is Alexander and I'm a
-passionate fullstack developer from Germany.
+passionate fullstack engineer from Germany.
 
 My focus constantly shifts depending on the demands of the team or
 project, or the trends I am currently pursuing. My strength lies
