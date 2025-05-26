@@ -6,7 +6,7 @@ const slug = computed(() => route.fullPath);
 
 const { data, refresh } = await useAsyncData(
   "pages",
-  () => queryCollection("blog").path(route.fullPath).first(),
+  () => queryCollection("blog").path(route.path).first(),
   {
     watch: [slug],
   }
